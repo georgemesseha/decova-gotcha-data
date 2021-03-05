@@ -190,7 +190,7 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "AAAAAAAAA Node >> Workspace >> Increment patch #patch++",
+            "DisplayText": "OOOOOOOOOOOOO Node >> Workspace >> Increment patch #patch++",
             "Shortcut": "patch++",
             "Steps": [
                 {
