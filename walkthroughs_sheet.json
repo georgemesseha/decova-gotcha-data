@@ -109,18 +109,6 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "ggg >> Increment Patch Number",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will increment the patch number of the currently developed package",
-                    "Composer": "ggg patch++"
-                }
-            ]
-        },
-        {
-            "IsActive": true,
             "DisplayText": "npm >> Find unused and missing dependencies/packages",
             "Steps": [
                 {
@@ -190,14 +178,14 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "WWWWWWWWWWWWWWWWW Node >> Workspace >> Increment patch #patch++",
+            "DisplayText": "NodePackage >> Workspace >> Increment patch and update dependent workspaces #patch++",
             "Shortcut": "patch++",
             "Steps": [
                 {
                     "IsActive": true,
                     "Type": "Command",
-                    "DisplayText": "Will open Gtch workspace for you to develop",
-                    "Composer": "code G:/_MyProjects/_MyNodeProjects/Gtch"
+                    "DisplayText": "Will increment package's patch, then optionaly update dpenendent workspaces.",
+                    "Composer": "ggg patch++"
                 }
             ]
         }
