@@ -284,6 +284,18 @@
                     "Composer": "ggg edit-walkthroughs"
                 }
             ]
+        },
+        {
+            "DisplayText": "tttttttttttttttttttttttttttttttttttt",
+            "IsActive": true,
+            "Steps": [
+                {
+                    "IsActive": true,
+                    "Type": "Command",
+                    "DisplayText": "Will check the test ",
+                    "Composer": "ggg test"
+                }
+            ]
         }
     ]
 }
