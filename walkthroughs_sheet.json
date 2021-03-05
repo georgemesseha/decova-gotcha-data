@@ -49,7 +49,7 @@
                     "IsActive": true,
                     "Type": "Command",
                     "DisplayText": "Will increment the version's path no. of the current workspace's package.json",
-                    "Composer": "gmate patch++"
+                    "Composer": "ggg patch++"
                 },
                 {
                     "IsActive": true,
@@ -73,7 +73,7 @@
                     "IsActive": true,
                     "Type": "Command",
                     "DisplayText": "Will increment the version's path no. of the current workspace's package.json",
-                    "Composer": "gmate patch++"
+                    "Composer": "ggg patch++"
                 },
                 {
                     "IsActive": true,
@@ -109,13 +109,13 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "GMate >> Increment Patch Number",
+            "DisplayText": "ggg >> Increment Patch Number",
             "Steps": [
                 {
                     "IsActive": true,
                     "Type": "Command",
                     "DisplayText": "Will increment the patch number of the currently developed package",
-                    "Composer": "gmate patch++"
+                    "Composer": "ggg patch++"
                 }
             ]
         },
@@ -153,13 +153,13 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "GMate >> CmdSheet >> Reload #commands#data",
+            "DisplayText": "ggg >> CmdSheet >> Reload #commands#data",
             "Steps": [
                 {
                     "IsActive": true,
                     "Type": "Command",
                     "DisplayText": "Will reload Walkthrough sheet",
-                    "Composer": "gmate reload-walkthrough-sheet"  
+                    "Composer": "ggg reload-walkthrough-sheet"  
                 }
             ]
         },
@@ -171,8 +171,8 @@
                 {
                     "IsActive": true,
                     "Type": "Command",
-                    "DisplayText": "GMate >> Old Poyka >> Open #legacy",
-                    "Composer": "gmate open-old-poyka"
+                    "DisplayText": "ggg >> Old Poyka >> Open #legacy",
+                    "Composer": "ggg open-old-poyka"
                 }
             ]
         },
@@ -190,7 +190,7 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "Node >> Workspace >> Increment patch #patch++",
+            "DisplayText": "zzzzzzzzzzzz Node >> Workspace >> Increment patch #patch++",
             "Shortcut": "patch++",
             "Steps": [
                 {
