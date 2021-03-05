@@ -192,13 +192,24 @@
         {
             "IsActive": true,
             "DisplayText": "Gotcha >> Edit Walkthroughs #sheet#commands#steps",
-            "Shortcut": "edit-walkthroughs",
             "Steps": [
                 {
                     "IsActive": true,
                     "Type": "Command",
                     "DisplayText": "Will guide you to edit Walkthroughs",
                     "Composer": "ggg edit-walkthroughs"
+                }
+            ]
+        },
+        {
+            "IsActive": true,
+            "DisplayText": "Gotcha >> Check out repo",
+            "Steps": [
+                {
+                    "IsActive": true,
+                    "Type": "Command",
+                    "DisplayText": "Will guide you to edit Walkthroughs",
+                    "Composer": "ggg check-repo"
                 }
             ]
         }
