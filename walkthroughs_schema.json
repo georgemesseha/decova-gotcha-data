@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/georgemesseha/decova-gotcha-data/master/walkthroughs_schmea.json",
+    "$id": "https://raw.githubusercontent.com/georgemesseha/decova-gotcha-data/master/walkthroughs_schema.json",
     "title": "Product",
     "description": "Describes the GMate CommandSheet contents",
     "definitions": {

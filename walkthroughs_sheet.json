@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/georgemesseha/gmate/master/src/gmate-commands-schema.json",
+    "$schema": "https://raw.githubusercontent.com/georgemesseha/decova-gotcha-data/master/walkthroughs_schema.json",
     "CreatedOn": "2021-02-27 09:42:30",
     
     "Walkthroughs": [
