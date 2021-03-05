@@ -198,7 +198,7 @@
                     "IsActive": true,
                     "Type": "Command",
                     "DisplayText": "Will guide you to edit Walkthroughs",
-                    "Composer": ""
+                    "Composer": "ggg edit-walkthroughs"
                 }
             ]
         }
