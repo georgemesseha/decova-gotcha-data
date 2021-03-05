@@ -212,6 +212,78 @@
                     "Composer": "ggg check-repo"
                 }
             ]
+        },
+        {
+            "IsActive": true,
+            "DisplayText": "Gotcha >> Add a new LocalTool",
+            "Steps": [
+                {
+                    "IsActive": true,
+                    "Type": "Command",
+                    "DisplayText": "Will open decova-gotcha workspace in VSCode",
+                    "Composer": "code G:/_MyProjects/_MyNodeProjects/decova-gotcha"
+                },
+                {
+                    "IsActive": true,
+                    "Type": "Instruction",
+                    "DisplayText": "",
+                    "Composer": "Ctrl P / LTool_ to find where to put your new tool .ts file"
+                },
+                {
+                    "IsActive": true,
+                    "Type": "Instruction",
+                    "DisplayText": "Create a new LTool_{TOOL_NAME}.ts file and implement ILocalTool",
+                    "Composer": ""
+                },
+                {
+                    "IsActive": true,
+                    "Type": "Instruction",
+                    "DisplayText": "Ctrl P / Dispatcher",
+                    "Composer": ""
+                },
+                {
+                    "IsActive": true,
+                    "Type": "Instruction",
+                    "DisplayText": "Ctrl P / App.ts",
+                    "Composer": ""
+                },
+                {
+                    "IsActive": true,
+                    "Type": "Instruction",
+                    "DisplayText": "",
+                    "Composer": "Ctrl F / RegisterLocalTools"
+                },
+                {
+                    "IsActive": true,
+                    "Type": "Instruction",
+                    "DisplayText": "",
+                    "Composer": "Add new {TOOLNAME();}"
+                },
+                {
+                    "IsActive": true,
+                    "Type": "Instruction",
+                    "DisplayText": "",
+                    "Composer": "Now your tool is able to be launched by ggg {shortcut}"
+                },
+                {
+                    "IsActive": true,
+                    "Type": "Instruction",
+                    "DisplayText": "",
+                    "Composer": "Copy the return value of the impl. of GetShortcut()"
+                },
+                {
+                    "IsActive": true,
+                    "Type": "Instruction",
+                    "DisplayText": "",
+                    "Composer": "You will be led to update the Walkthroughs. Use the copied shortcut to add a new Walkthrough"
+                },
+                {
+                    "IsActive": true,
+                    "Type": "Command",
+                    "DisplayText": "",
+                    "Composer": "ggg edit-walkthroughs"
+                }
+            ]
         }
     ]
 }
