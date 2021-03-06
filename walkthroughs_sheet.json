@@ -134,7 +134,7 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "Develop >> My Tools >> decova-gotcha",
+            "DisplayText": "Dev >> My Tools >> decova-gotcha",
             "Steps": [
                 {
                     "IsActive": true,
@@ -146,7 +146,7 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "NodePackage >> Workspace >> Increment patch and update dependent workspaces #patch++",
+            "DisplayText": "Ops >> Node >> Workspace >> Increment patch and update dependent workspaces #patch++",
             "Shortcut": "patch++",
             "Steps": [
                 {
@@ -159,7 +159,7 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "Gotcha >> Edit Walkthroughs #sheet#commands#steps",
+            "DisplayText": "Ops >> Gotcha >> Edit Walkthroughs #sheet#commands#steps",
             "Steps": [
                 {
                     "IsActive": true,
@@ -171,7 +171,7 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "Gotcha >> Check out repo",
+            "DisplayText": "Ops >> Gotcha >> Check out repo",
             "Steps": [
                 {
                     "IsActive": true,
@@ -183,7 +183,7 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "Gotcha >> Add a new LocalTool",
+            "DisplayText": "Ops >> Gotcha >> Add a new LocalTool",
             "Steps": [
                 {
                     "IsActive": true,
