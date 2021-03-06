@@ -31,7 +31,7 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "vscode >> install & build & patch++ & publish #increment#push)",
+            "DisplayText": "Ops >> vscode >> install & build & patch++ & publish #increment#push)",
             "Steps": [
                 {
                     "IsActive": true,
@@ -61,7 +61,7 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "vscode >> Writing Extension >> Pack your extension",
+            "DisplayText": "Ops >> vscode >> Writing Extension >> Pack your extension",
             "Steps": [
                 {
                     "IsActive": true,
