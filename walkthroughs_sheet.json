@@ -273,7 +273,7 @@
           "IsActive": true,
           "Type": "Instruction",
           "DisplayText": "",
-          "Composer": "Select some code VSCode"
+          "Composer": "Select some code in VSCode"
         },
         {
           "IsActive": true,
