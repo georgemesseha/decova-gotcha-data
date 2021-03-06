@@ -121,26 +121,6 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "Find the process using a specific port",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Prompt",
-                    "Regex": "[0-9]{2,}",
-                    "VarName": "port",
-                    "DisplayText": "Port #",
-                    "Composer": ""
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will find the process using the provided port (if any)",
-                    "Composer": "()=> 'netstat -ano | findstr :<<port>>'"
-                }
-            ]
-        },
-        {
-            "IsActive": true,
             "DisplayText": "ggg >> CmdSheet >> Reload #commands#data",
             "Steps": [
                 {
