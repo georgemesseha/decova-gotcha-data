@@ -54,7 +54,7 @@
                 {
                     "IsActive": true,
                     "Type": "Command",
-                    "DisplayText": "Will publish the currently developed package to npm repo.",
+                    "DisplayText": "Will publish the currently being developed package to npm repo.",
                     "Composer": "npm publish"
                 }
             ]
