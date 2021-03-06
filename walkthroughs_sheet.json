@@ -134,13 +134,13 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "Develop >> My Tools >> Gtch #gotcha",
+            "DisplayText": "Develop >> My Tools >> decova-gotcha",
             "Steps": [
                 {
                     "IsActive": true,
                     "Type": "Command",
                     "DisplayText": "Will open Gtch workspace for you to develop",
-                    "Composer": "code G:/_MyProjects/_MyNodeProjects/Gtch"
+                    "Composer": "code G:/_MyProjects/_MyNodeProjects/decova-gotcha"
                 }
             ]
         },
