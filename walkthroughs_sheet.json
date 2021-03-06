@@ -85,7 +85,7 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "npm >> List direct dependencies",
+            "DisplayText": "Dev >> npm >> List direct dependencies",
             "Steps": [
                 {
                     "IsActive": true,
@@ -97,7 +97,7 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "npm >> List globally installed packages",
+            "DisplayText": "Dev >> npm >> List globally installed packages",
             "Steps": [
                 {
                     "Type": "Command",
@@ -109,7 +109,7 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "npm >> Find unused and missing dependencies/packages",
+            "DisplayText": "Dev >> npm >> Find unused and missing dependencies/packages",
             "Steps": [
                 {
                     "IsActive": true,
