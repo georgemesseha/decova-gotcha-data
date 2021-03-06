@@ -1,269 +1,287 @@
 {
-    "$schema": "https://raw.githubusercontent.com/georgemesseha/decova-gotcha-data/master/walkthroughs_schema.json",
-    "CreatedOn": "2021-02-27 09:42:30",
-    
-    "Walkthroughs": [
+  "$schema": "https://raw.githubusercontent.com/georgemesseha/decova-gotcha-data/master/walkthroughs_schema.json",
+  "CreatedOn": "2021-02-27 09:42:30",
+  "Walkthroughs": [
+    {
+      "IsActive": true,
+      "DisplayText": "Ops >> Find the process whose port",
+      "Shortcut": "find-process-whose-port",
+      "Steps": [
         {
-            "IsActive": true,
-            "DisplayText": "Ops >> Find the process whose port",
-            "Shortcut": "find-process-whose-port",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "RunOnlyIf": "",
-                    "Type": "Prompt",
-                    "VarName": "port",
-                    "DisplayText": "Port #",
-                    "Regex": "^[0-9]{2,}$",
-                    "Options": [],
-                    "Composer": "()=> 'netstat -ano | findstr :<port>'"
-                },
-                {
-                    "IsActive": true,
-                    "RunOnlyIf": "",
-                    "Type": "Command",
-                    "VarName": "",
-                    "DisplayText": "Will find the ID of the process using a specific port.",
-                    "Options": [],
-                    "Composer": "()=> `netstat -ano | findstr :<port>`"
-                }
-            ]
+          "IsActive": true,
+          "RunOnlyIf": "",
+          "Type": "Prompt",
+          "VarName": "port",
+          "DisplayText": "Port #",
+          "Regex": "^[0-9]{2,}$",
+          "Options": [],
+          "Composer": "()=> 'netstat -ano | findstr :<port>'"
         },
         {
-            "IsActive": true,
-            "DisplayText": "Ops >> vscode >> install & build & patch++ & publish #increment#push)",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will install the missing packages & update the outdated ones.",
-                    "Composer": "npm install"
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will compile TypeScript",
-                    "Composer": "tsc"
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will increment the version's path no. of the current workspace's package.json",
-                    "Composer": "ggg patch++"
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will publish the currently being developed package to npm repo.",
-                    "Composer": "npm publish"
-                }
-            ]
-        },
-        {
-            "IsActive": true,
-            "DisplayText": "Ops >> vscode >> Writing Extension >> Pack your extension",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will compile TypeScript",
-                    "Composer": "tsc"
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will increment the version's path no. of the current workspace's package.json",
-                    "Composer": "ggg patch++"
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will package the extension locally as vsix",
-                    "Composer": "vsce package"
-                }
-            ]
-        },
-        {
-            "IsActive": true,
-            "DisplayText": "Dev >> npm >> List direct dependencies",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "DisplayText": "Will list the direct dependencies of the currently developed package.",
-                    "Type": "Command",
-                    "Composer": "npm list --depth=0"
-                }
-            ]
-        },
-        {
-            "IsActive": true,
-            "DisplayText": "Dev >> npm >> List globally installed packages",
-            "Steps": [
-                {
-                    "Type": "Command",
-                    "IsActive": true,
-                    "DisplayText": "Will list the globally installed packages.",
-                    "Composer": "npm list --global --depth=0"
-                }
-            ]
-        },
-        {
-            "IsActive": true,
-            "DisplayText": "Dev >> npm >> Find unused and missing dependencies/packages",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will find the unused and missing dependencies/packages",
-                    "Composer": "depcheck"
-                }
-            ]
-        },
-        {
-            "IsActive": true,
-            "DisplayText": "Poyka >> Open old poyka browsing mechanism",
-            "Type": "Command",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "ggg >> Old Poyka >> Open #legacy",
-                    "Composer": "ggg open-old-poyka"
-                }
-            ]
-        },
-        {
-            "IsActive": true,
-            "DisplayText": "Dev >> My Tools >> decova-gotcha",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will open Gtch workspace for you to develop",
-                    "Composer": "code G:/_MyProjects/_MyNodeProjects/decova-gotcha"
-                }
-            ]
-        },
-        {
-            "IsActive": true,
-            "DisplayText": "Ops >> Node >> Workspace >> Increment patch and update dependent workspaces #patch++",
-            "Shortcut": "patch++",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will increment package's patch, then optionaly update dpenendent workspaces.",
-                    "Composer": "ggg patch++"
-                }
-            ]
-        },
-        {
-            "IsActive": true,
-            "DisplayText": "Ops >> Gotcha >> Edit Walkthroughs #sheet#commands#steps",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will guide you to edit Walkthroughs",
-                    "Composer": "ggg edit-walkthroughs"
-                }
-            ]
-        },
-        {
-            "IsActive": true,
-            "DisplayText": "Ops >> Gotcha >> Check out repo",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will guide you to edit Walkthroughs",
-                    "Composer": "ggg check-repo"
-                }
-            ]
-        },
-        {
-            "IsActive": true,
-            "DisplayText": "Ops >> Gotcha >> Add a new LocalTool",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will open decova-gotcha workspace in VSCode",
-                    "Composer": "code G:/_MyProjects/_MyNodeProjects/decova-gotcha"
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Instruction",
-                    "DisplayText": "",
-                    "Composer": "Ctrl P / LTool_ to find where to put your new tool .ts file"
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Instruction",
-                    "DisplayText": "Create a new LTool_{TOOL_NAME}.ts file and implement ILocalTool",
-                    "Composer": ""
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Instruction",
-                    "DisplayText": "Ctrl P / Dispatcher",
-                    "Composer": ""
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Instruction",
-                    "DisplayText": "Ctrl P / App.ts",
-                    "Composer": ""
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Instruction",
-                    "DisplayText": "",
-                    "Composer": "Ctrl F / RegisterLocalTools"
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Instruction",
-                    "DisplayText": "",
-                    "Composer": "Add new {TOOLNAME();}"
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Instruction",
-                    "DisplayText": "",
-                    "Composer": "Now your tool is able to be launched by ggg {shortcut}"
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Instruction",
-                    "DisplayText": "",
-                    "Composer": "Copy the return value of the impl. of GetShortcut()"
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Instruction",
-                    "DisplayText": "",
-                    "Composer": "You will be led to update the Walkthroughs. Use the copied shortcut to add a new Walkthrough"
-                },
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "",
-                    "Composer": "ggg edit-walkthroughs"
-                }
-            ]
-        },
-        {
-            "DisplayText": "tttttttttttttttttttttttttttttttttttt",
-            "IsActive": true,
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will check the test ",
-                    "Composer": "ggg test"
-                }
-            ]
+          "IsActive": true,
+          "RunOnlyIf": "",
+          "Type": "Command",
+          "VarName": "",
+          "DisplayText": "Will find the ID of the process using a specific port.",
+          "Options": [],
+          "Composer": "()=> `netstat -ano | findstr :<port>`"
         }
-    ]
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Ops >> vscode >> install & build & patch++ & publish #increment#push)",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will install the missing packages & update the outdated ones.",
+          "Composer": "npm install"
+        },
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will compile TypeScript",
+          "Composer": "tsc"
+        },
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will increment the version's path no. of the current workspace's package.json",
+          "Composer": "ggg patch++"
+        },
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will publish the currently being developed package to npm repo.",
+          "Composer": "npm publish"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Ops >> vscode >> Writing Extension >> Pack your extension",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will compile TypeScript",
+          "Composer": "tsc"
+        },
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will increment the version's path no. of the current workspace's package.json",
+          "Composer": "ggg patch++"
+        },
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will package the extension locally as vsix",
+          "Composer": "vsce package"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Dev >> npm >> List direct dependencies",
+      "Steps": [
+        {
+          "IsActive": true,
+          "DisplayText": "Will list the direct dependencies of the currently developed package.",
+          "Type": "Command",
+          "Composer": "npm list --depth=0"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Dev >> npm >> List globally installed packages",
+      "Steps": [
+        {
+          "Type": "Command",
+          "IsActive": true,
+          "DisplayText": "Will list the globally installed packages.",
+          "Composer": "npm list --global --depth=0"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Dev >> npm >> Find unused and missing dependencies/packages",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will find the unused and missing dependencies/packages",
+          "Composer": "depcheck"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Poyka >> Open old poyka browsing mechanism",
+      "Type": "Command",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "ggg >> Old Poyka >> Open #legacy",
+          "Composer": "ggg open-old-poyka"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Dev >> My Tools >> decova-gotcha",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will open Gtch workspace for you to develop",
+          "Composer": "code G:/_MyProjects/_MyNodeProjects/decova-gotcha"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Ops >> Node >> Workspace >> Increment patch and update dependent workspaces #patch++",
+      "Shortcut": "patch++",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will increment package's patch, then optionaly update dpenendent workspaces.",
+          "Composer": "ggg patch++"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Ops >> Gotcha >> Edit Walkthroughs #sheet#commands#steps",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will guide you to edit Walkthroughs",
+          "Composer": "ggg edit-walkthroughs"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Ops >> Gotcha >> Check out repo",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will guide you to edit Walkthroughs",
+          "Composer": "ggg check-repo"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Ops >> Gotcha >> Add a new LocalTool",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will open decova-gotcha workspace in VSCode",
+          "Composer": "code G:/_MyProjects/_MyNodeProjects/decova-gotcha"
+        },
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "",
+          "Composer": "Ctrl P / LTool_ to find where to put your new tool .ts file"
+        },
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "Create a new LTool_{TOOL_NAME}.ts file and implement ILocalTool",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "Ctrl P / Dispatcher",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "Ctrl P / App.ts",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "",
+          "Composer": "Ctrl F / RegisterLocalTools"
+        },
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "",
+          "Composer": "Add new {TOOLNAME();}"
+        },
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "",
+          "Composer": "Now your tool is able to be launched by ggg {shortcut}"
+        },
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "",
+          "Composer": "Copy the return value of the impl. of GetShortcut()"
+        },
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "",
+          "Composer": "You will be led to update the Walkthroughs. Use the copied shortcut to add a new Walkthrough"
+        },
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "",
+          "Composer": "ggg edit-walkthroughs"
+        }
+      ]
+    },
+    {
+      "DisplayText": "Dev >> Snippets >> Create a new code snippet",
+      "IsActive": true,
+      "Shortcut": "new-snippet",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "",
+          "Composer": "Select some code VSCode"
+        },
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "",
+          "Composer": "Ctrl Shift P >> Convert to snippet"
+        },
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "",
+          "Composer": "Copy your snippet from the Output window"
+        },
+        {
+          "IsActive": true,
+          "Type": "Instruction",
+          "DisplayText": "",
+          "Composer": "Alt V >> g >> Edit my code snippets"
+        }
+      ]
+    }
+  ]
 }
