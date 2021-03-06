@@ -289,9 +289,9 @@
         },
         {
           "IsActive": true,
-          "Type": "Instruction",
+          "Type": "Command",
           "DisplayText": "",
-          "Composer": "Alt V >> g >> Edit my code snippets"
+          "Composer": "g edit-snippets"
         }
       ]
     }
