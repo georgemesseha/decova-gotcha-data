@@ -170,6 +170,18 @@
     },
     {
       "IsActive": true,
+      "DisplayText": "Ops >> Gotcha >> Edit my code snippets #augment",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will guide you to edit Walkthroughs",
+          "Composer": "ggg edit-snippets"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
       "DisplayText": "Ops >> Gotcha >> Check out repo",
       "Steps": [
         {
