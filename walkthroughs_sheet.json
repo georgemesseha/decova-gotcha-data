@@ -121,18 +121,6 @@
         },
         {
             "IsActive": true,
-            "DisplayText": "ggg >> CmdSheet >> Reload #commands#data",
-            "Steps": [
-                {
-                    "IsActive": true,
-                    "Type": "Command",
-                    "DisplayText": "Will reload Walkthrough sheet",
-                    "Composer": "ggg reload-walkthrough-sheet"  
-                }
-            ]
-        },
-        {
-            "IsActive": true,
             "DisplayText": "Poyka >> Open old poyka browsing mechanism",
             "Type": "Command",
             "Steps": [
