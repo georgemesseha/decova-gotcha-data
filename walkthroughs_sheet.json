@@ -211,20 +211,20 @@
         {
           "IsActive": true,
           "Type": "Instruction",
-          "DisplayText": "Create a new LTool_{TOOL_NAME}.ts file and implement ILocalTool",
-          "Composer": ""
+          "DisplayText": "",
+          "Composer": "Create a new LTool_{TOOL_NAME}.ts file and implement ILocalTool"
         },
         {
           "IsActive": true,
           "Type": "Instruction",
-          "DisplayText": "Ctrl P / Dispatcher",
-          "Composer": ""
+          "DisplayText": "",
+          "Composer": "Ctrl P / Dispatcher"
         },
         {
           "IsActive": true,
           "Type": "Instruction",
-          "DisplayText": "Ctrl P / App.ts",
-          "Composer": ""
+          "DisplayText": "",
+          "Composer": "Ctrl P / App.ts"
         },
         {
           "IsActive": true,
