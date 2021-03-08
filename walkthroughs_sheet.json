@@ -67,7 +67,7 @@
           "IsActive": true,
           "Type": "Command",
           "DisplayText": "Will increment the version's path no. of the current workspace's package.json",
-          "Composer": "ggg patch++"
+          "Composer": "g patch++"
         },
         {
           "IsActive": true,
@@ -91,7 +91,7 @@
           "IsActive": true,
           "Type": "Command",
           "DisplayText": "Will increment the version's path no. of the current workspace's package.json",
-          "Composer": "ggg patch++"
+          "Composer": "g patch++"
         },
         {
           "IsActive": true,
@@ -145,8 +145,8 @@
         {
           "IsActive": true,
           "Type": "Command",
-          "DisplayText": "ggg >> Old Poyka >> Open #legacy",
-          "Composer": "ggg open-old-poyka"
+          "DisplayText": "g >> Old Poyka >> Open #legacy",
+          "Composer": "g open-old-poyka"
         }
       ]
     },
@@ -171,7 +171,7 @@
           "IsActive": true,
           "Type": "Command",
           "DisplayText": "Will increment package's patch, then optionaly update dpenendent workspaces.",
-          "Composer": "ggg patch++"
+          "Composer": "g patch++"
         }
       ]
     },
@@ -195,7 +195,7 @@
           "IsActive": true,
           "Type": "Command",
           "DisplayText": "Will guide you to edit Walkthroughs",
-          "Composer": "ggg edit-snippets"
+          "Composer": "g edit-snippets"
         }
       ]
     },
@@ -249,7 +249,7 @@
           "IsActive": true,
           "Type": "Instruction",
           "DisplayText": "",
-          "Composer": "Now your tool is able to be launched by ggg {shortcut}"
+          "Composer": "Now your tool is able to be launched by g {shortcut}"
         },
         {
           "IsActive": true,
@@ -267,7 +267,7 @@
           "IsActive": true,
           "Type": "Command",
           "DisplayText": "",
-          "Composer": "ggg edit-walkthroughs"
+          "Composer": "g edit-walkthroughs"
         }
       ]
     },
