@@ -25,6 +25,25 @@
           "DisplayText": "Will find the ID of the process using a specific port.",
           "Options": [],
           "Composer": "()=> `netstat -ano | findstr :<port>`"
+        },
+        {
+          "IsActive": true,
+          "RunOnlyIf": "",
+          "Type": "Prompt",
+          "VarName": "pid",
+          "DisplayText": "Pick a PID from the above list",
+          "Options": [],
+          "Regex": "[0-9]+",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "RunOnlyIf": "",
+          "Type": "Command",
+          "VarName": "",
+          "DisplayText": "Will display info about the process whose PID = <pid>",
+          "Options": [],
+          "Composer": "tasklist /svc /FI \"PID eq <pid>\""
         }
       ]
     },
