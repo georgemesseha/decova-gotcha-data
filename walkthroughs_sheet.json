@@ -266,7 +266,7 @@
         {
           "IsActive": true,
           "Type": "Command",
-          "DisplayText": "",
+          "DisplayText": "You will be led to edit your global snippets",
           "Composer": "g edit-snippets"
         }
       ]
