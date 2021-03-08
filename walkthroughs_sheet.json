@@ -158,18 +158,6 @@
     },
     {
       "IsActive": true,
-      "DisplayText": "Ops >> Gotcha >> Edit Walkthroughs #sheet#commands#steps",
-      "Steps": [
-        {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will guide you to edit Walkthroughs",
-          "Composer": "ggg edit-walkthroughs"
-        }
-      ]
-    },
-    {
-      "IsActive": true,
       "DisplayText": "Ops >> Gotcha >> Edit my code snippets #augment",
       "Steps": [
         {
