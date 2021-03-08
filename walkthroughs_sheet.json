@@ -158,6 +158,18 @@
     },
     {
       "IsActive": true,
+      "DisplayText": "Dev >> Mine >> decova-gotcha #gtch#workspace",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will open decova-gotcha workspace for you",
+          "Composer": "start G:/_MyProjects/_MyNodeProjects/decova-gotcha"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
       "DisplayText": "Ops >> Gotcha >> Edit my code snippets #augment",
       "Steps": [
         {
