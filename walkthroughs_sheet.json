@@ -158,7 +158,7 @@
     },
     {
       "IsActive": true,
-      "DisplayText": "Dev >> Mine >> decova-gotcha #gtch#workspace",
+      "DisplayText": "Dev >> Mine >> nodejs >> decova-gotcha #gtch#workspace",
       "Steps": [
         {
           "IsActive": true,
