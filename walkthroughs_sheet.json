@@ -30,7 +30,7 @@
     },
     {
       "IsActive": true,
-      "DisplayText": "Ops >> vscode >> install & build & patch++ & publish #increment#push)",
+      "DisplayText": "Ops >> vscode >> install & build & patch++ & publish #increment#push",
       "Steps": [
         {
           "IsActive": true,
