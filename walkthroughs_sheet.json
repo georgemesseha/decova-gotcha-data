@@ -182,18 +182,6 @@
     },
     {
       "IsActive": true,
-      "DisplayText": "Ops >> Gotcha >> Check out repo",
-      "Steps": [
-        {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will guide you to edit Walkthroughs",
-          "Composer": "ggg check-repo"
-        }
-      ]
-    },
-    {
-      "IsActive": true,
       "DisplayText": "Ops >> Gotcha >> Add a new LocalTool",
       "Steps": [
         {
