@@ -133,7 +133,7 @@
           "Type": "Prompt",
           "VarName": "imageName",
           "IsActive": true,
-          "DisplayText": "Image Name: ",
+          "DisplayText": "Image Name:",
           "Composer": ""
         },
         {
