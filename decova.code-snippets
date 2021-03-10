@@ -1,4 +1,4 @@
-{
+    {
     "Terminal Mcq Prompt":{
         "prefix": "ss.terminal.mcq", // the snippet suggestion code editor show up for you.
         "body": [ // contains the code lines.
