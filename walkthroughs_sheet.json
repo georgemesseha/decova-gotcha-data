@@ -127,6 +127,32 @@
     },
     {
       "IsActive": true,
+      "DisplayText": "Ops >> Docker >> Export image to tar file",
+      "Steps": [
+        {
+          "Type": "Prompt",
+          "VarName": "imageName",
+          "IsActive": true,
+          "DisplayText": "Image Name: ",
+          "Composer": ""
+        },
+        {
+          "Type": "Prompt",
+          "VarName": "outputFilePath",
+          "IsActive": true,
+          "DisplayText": "Output file path (without extension): ",
+          "Composer": ""
+        },
+        {
+          "Type": "Command",
+          "IsActive": true,
+          "DisplayText": "Will export image <imageName> to <outputFilePath>",
+          "Composer": "docker image save <imageName> -o <outputFilePath>"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
       "DisplayText": "Dev >> npm >> Find unused and missing dependencies/packages",
       "Steps": [
         {
