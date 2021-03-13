@@ -153,6 +153,48 @@
     },
     {
       "IsActive": true,
+      "DisplayText": "Ops >> Docker >> Pull image",
+      "Steps": [
+        {
+          "Type": "Prompt",
+          "VarName": "pullAllTags",
+          "IsActive": true,
+          "DisplayText": "Pull all tags?",
+          "Options": ["No", "Yes"],
+          "Composer": ""
+        },
+        {
+          "Type": "Prompt",
+          "DisplayText": "List images to pick from?",
+          "IsActive": true,
+          "VarName": "listImages",
+          "Options": ["Yes", "No"],
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "RunOnlyIf": "()=> <listImages> == 'Yes'",
+          "Composer": "docker image ls -a",
+          "DisplayText": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Prompt",
+          "DisplayText": "Image name?",
+          "VarName": "imageName",
+          "Composer": ""
+        },
+        {
+          "Type": "Command",
+          "IsActive": true,
+          "DisplayText": "Will pull image <imageName> to your local repo",
+          "Composer": "docker pull <imageName>"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
       "DisplayText": "Dev >> npm >> Find unused and missing dependencies/packages",
       "Steps": [
         {
