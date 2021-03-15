@@ -153,6 +153,40 @@
     },
     {
       "IsActive": true,
+      "DisplayText": "Ops >> Docker >> Bash inside a running docker container #cmd#command#cli",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Prompt",
+          "VarName": "displayRunningContainers",
+          "Options": ["Yes", "No"],
+          "DisplayText": "Show running containers?",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "RunOnlyIf": "()=> <displayRunningContainers> == 'Yes'",
+          "DisplayText": "Will display the running containers",
+          "Composer": "docker ps"
+        },
+        {
+          "Type": "Prompt",
+          "VarName": "containerName",
+          "IsActive": true,
+          "DisplayText": "Container name?",
+          "Composer": ""
+        },
+        {
+          "Type": "Command",
+          "IsActive": true,
+          "DisplayText": "Will let you bash inside [<conatinerName>] container",
+          "Composer": "docker exec -u root -it <containerName> /bin/bash"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
       "DisplayText": "Ops >> Docker >> Pull image",
       "Steps": [
         {
