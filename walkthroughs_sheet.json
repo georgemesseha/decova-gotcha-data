@@ -423,12 +423,6 @@
           "IsActive": true,
           "Type": "Instruction",
           "DisplayText": "",
-          "Composer": "Ctrl P / Dispatcher"
-        },
-        {
-          "IsActive": true,
-          "Type": "Instruction",
-          "DisplayText": "",
           "Composer": "Ctrl P / App.ts"
         },
         {
@@ -447,25 +441,7 @@
           "IsActive": true,
           "Type": "Instruction",
           "DisplayText": "",
-          "Composer": "Now your tool is able to be launched by g {shortcut}"
-        },
-        {
-          "IsActive": true,
-          "Type": "Instruction",
-          "DisplayText": "",
-          "Composer": "Copy the return value of the impl. of GetShortcut()"
-        },
-        {
-          "IsActive": true,
-          "Type": "Instruction",
-          "DisplayText": "",
-          "Composer": "You will be led to update the Walkthroughs. Use the copied shortcut to add a new Walkthrough"
-        },
-        {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "",
-          "Composer": "g edit-walkthroughs"
+          "Composer": "Now your tool is able to be launched by g {shortcut} and will be listed automatically in Gotcha commands"
         }
       ]
     },
