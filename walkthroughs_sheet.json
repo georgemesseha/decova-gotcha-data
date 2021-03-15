@@ -209,7 +209,7 @@
           "IsActive": true,
           "Type": "Command",
           "RunOnlyIf": "()=> <listImages> == 'Yes'",
-          "Composer": "docker image ls -a",
+          "Composer": "docker image ls",
           "DisplayText": ""
         },
         {
