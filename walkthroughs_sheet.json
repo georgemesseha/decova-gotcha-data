@@ -229,7 +229,7 @@
     },
     {
       "IsActive": true,
-      "DisplayText": "Ops >> Docker >> Copy a file Host --> Container",
+      "DisplayText": "Ops >> Docker >> Copy a file (Host --> Container)",
       "Steps": [
         {
           "IsActive": true,
@@ -270,7 +270,56 @@
         {
           "IsActive": true,
           "Type": "Command",
+          "DisplayText": "Will copy the source File/Directory from you host to the container",
           "Composer": "docker cp \"<srcPath>\" containerName:\"<dstPath>\""
+        }
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Ops >> Docker >> Copy a file (Conatiner --> Host)",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Prompt",
+          "VarName": "displayRunningContainers",
+          "Options": ["Yes", "No"],
+          "DisplayText": "Show running containers?",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "RunOnlyIf": "()=> <displayRunningContainers> == 'Yes'",
+          "DisplayText": "Will display the running containers",
+          "Composer": "docker ps"
+        },
+        {
+          "IsActive": true,
+          "Type": "Prompt",
+          "DisplayText": "Container name?",
+          "VarName": "containerName",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Prompt",
+          "DisplayText": "Source file/directory path on host?",
+          "VarName": "srcPath",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Prompt",
+          "VarName": "dstPath",
+          "DisplayText": "Destination path inside the container?",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will copy the source File/Directory from the container to your host machine",
+          "Composer": "docker cp containerName:\"<srcPath>\" \"<dstPath>\""
         }
       ]
     },
