@@ -229,6 +229,53 @@
     },
     {
       "IsActive": true,
+      "DisplayText": "Ops >> Docker >> Copy a file Host --> Container",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Prompt",
+          "VarName": "displayRunningContainers",
+          "Options": ["Yes", "No"],
+          "DisplayText": "Show running containers?",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "RunOnlyIf": "()=> <displayRunningContainers> == 'Yes'",
+          "DisplayText": "Will display the running containers",
+          "Composer": "docker ps"
+        },
+        {
+          "IsActive": true,
+          "Type": "Prompt",
+          "DisplayText": "Container name?",
+          "VarName": "containerName",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Prompt",
+          "DisplayText": "Source file/directory path on host?",
+          "VarName": "srcPath",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Prompt",
+          "VarName": "dstPath",
+          "DisplayText": "Destination path inside the container?",
+          "Composer": ""
+        },
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "Composer": "docker cp \"<srcPath>\" containerName:\"<dstPath>\""
+        }
+      ]
+    },
+    {
+      "IsActive": true,
       "DisplayText": "Dev >> npm >> Find unused and missing dependencies/packages",
       "Steps": [
         {
