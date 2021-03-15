@@ -229,7 +229,7 @@
     },
     {
       "IsActive": true,
-      "DisplayText": "Ops >> Docker >> Copy a file (Host --> Container)",
+      "DisplayText": "Ops >> Docker >> Copy a file/folder (Host --> Container)",
       "Steps": [
         {
           "IsActive": true,
@@ -277,7 +277,7 @@
     },
     {
       "IsActive": true,
-      "DisplayText": "Ops >> Docker >> Copy a file (Conatiner --> Host)",
+      "DisplayText": "Ops >> Docker >> Copy a file/folder (Conatiner --> Host)",
       "Steps": [
         {
           "IsActive": true,
