@@ -286,7 +286,7 @@
           "IsActive": true,
           "Type": "Command",
           "DisplayText": "Will copy the source File/Directory from you host to the container",
-          "Composer": "docker cp \"<srcPath>\" containerName:\"<dstPath>\""
+          "Composer": "docker cp <srcPath> <containerName>:<dstPath>"
         }
       ]
     },
@@ -334,7 +334,7 @@
           "IsActive": true,
           "Type": "Command",
           "DisplayText": "Will copy the source File/Directory from the container to your host machine",
-          "Composer": "docker cp containerName:\"<srcPath>\" \"<dstPath>\""
+          "Composer": "docker cp <containerName>:<srcPath> <dstPath>"
         }
       ]
     },
