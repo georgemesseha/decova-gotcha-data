@@ -127,6 +127,18 @@
     },
     {
       "IsActive": true,
+      "DisplayText": "Ops >> Docker >> List running contaienrs #list#show",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "DisplayText": "Will list the running containers",
+          "Composer": "docker ps"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
       "DisplayText": "Ops >> Docker >> Export image to tar file",
       "Steps": [
         {
@@ -175,7 +187,7 @@
           "Type": "Prompt",
           "VarName": "displayRunningContainers",
           "Options": ["Yes", "No"],
-          "DisplayText": "Show running containers?",
+          "DisplayText": "List running containers?",
           "Composer": ""
         },
         {
@@ -197,6 +209,18 @@
           "IsActive": true,
           "DisplayText": "Will let you bash inside [<conatinerName>] container",
           "Composer": "docker exec -u root -it <containerName> /bin/bash"
+        }
+      ]
+    },
+    {
+      "IsActive": true,
+      "DisplayText": "Ops >> Docker >> List images #display#show",
+      "Steps": [
+        {
+          "IsActive": true,
+          "Type": "Command",
+          "Composer": "docker image ls",
+          "DisplayText": "Will list top level images"
         }
       ]
     },
@@ -251,7 +275,7 @@
           "Type": "Prompt",
           "VarName": "displayRunningContainers",
           "Options": ["Yes", "No"],
-          "DisplayText": "Show running containers?",
+          "DisplayText": "List running containers?",
           "Composer": ""
         },
         {
@@ -299,7 +323,7 @@
           "Type": "Prompt",
           "VarName": "displayRunningContainers",
           "Options": ["Yes", "No"],
-          "DisplayText": "Show running containers?",
+          "DisplayText": "List running containers?",
           "Composer": ""
         },
         {
