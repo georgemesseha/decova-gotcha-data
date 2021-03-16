@@ -127,7 +127,7 @@
     },
     {
       "IsActive": true,
-      "DisplayText": "Ops >> Docker >> List running contaienrs #list#show",
+      "DisplayText": "Ops >> Docker >> Container >> List running containers #list#show",
       "Steps": [
         {
           "IsActive": true,
