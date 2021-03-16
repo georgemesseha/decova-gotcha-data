@@ -180,7 +180,7 @@
     },
     {
       "IsActive": true,
-      "DisplayText": "Ops >> Docker >> Bash inside a running docker container #cmd#command#cli",
+      "DisplayText": "Ops >> Docker >> Container >> Bash inside a running docker container #cmd#command#cli",
       "Steps": [
         {
           "IsActive": true,
@@ -207,7 +207,7 @@
         {
           "Type": "Command",
           "IsActive": true,
-          "DisplayText": "Will let you bash inside [<conatinerName>] container",
+          "DisplayText": "Will let you bash inside [<containerName>] container",
           "Composer": "docker exec -u root -it <containerName> /bin/bash"
         }
       ]
@@ -268,7 +268,7 @@
     },
     {
       "IsActive": true,
-      "DisplayText": "Ops >> Docker >> Copy a file/folder (Host --> Container)",
+      "DisplayText": "Ops >> Docker >> Container >> Copy a file/folder (Host --> Container)",
       "Steps": [
         {
           "IsActive": true,
@@ -316,7 +316,7 @@
     },
     {
       "IsActive": true,
-      "DisplayText": "Ops >> Docker >> Copy a file/folder (Conatiner --> Host)",
+      "DisplayText": "Ops >> Docker >> Container >> Copy a file/folder (Container --> Host)",
       "Steps": [
         {
           "IsActive": true,
