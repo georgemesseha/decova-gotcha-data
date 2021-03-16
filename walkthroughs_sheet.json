@@ -365,7 +365,7 @@
     },
     {
       "IsActive": true,
-      "DisplayText": "Dev >> My Tools >> decova-gotcha",
+      "DisplayText": "Dev >> My Projects >> Develop >> decova-gotcha",
       "Steps": [
         {
           "IsActive": true,
@@ -385,18 +385,6 @@
           "Type": "Command",
           "DisplayText": "Will increment package's patch, then optionaly update dpenendent workspaces.",
           "Composer": "g patch++"
-        }
-      ]
-    },
-    {
-      "IsActive": true,
-      "DisplayText": "Dev >> Mine >> nodejs >> decova-gotcha #gtch#workspace",
-      "Steps": [
-        {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will open decova-gotcha workspace for you",
-          "Composer": "start G:/_MyProjects/_MyNodeProjects/decova-gotcha"
         }
       ]
     },
