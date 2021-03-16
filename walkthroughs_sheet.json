@@ -140,7 +140,7 @@
         {
           "IsActive": true,
           "Type": "Command",
-          "RunOnlyIf": "()=> <listImages> == 'Yes'",
+          "RunOnlyIf": "()=> '<listImages>' == 'Yes'",
           "Composer": "docker image ls",
           "DisplayText": ""
         },
@@ -181,7 +181,7 @@
         {
           "IsActive": true,
           "Type": "Command",
-          "RunOnlyIf": "()=> <displayRunningContainers> == 'Yes'",
+          "RunOnlyIf": "()=> '<displayRunningContainers>' == 'Yes'",
           "DisplayText": "Will display the running containers",
           "Composer": "docker ps"
         },
@@ -223,7 +223,7 @@
         {
           "IsActive": true,
           "Type": "Command",
-          "RunOnlyIf": "()=> <listImages> == 'Yes'",
+          "RunOnlyIf": "()=> '<listImages>' == 'Yes'",
           "Composer": "docker image ls",
           "DisplayText": ""
         },
@@ -257,7 +257,7 @@
         {
           "IsActive": true,
           "Type": "Command",
-          "RunOnlyIf": "()=> <displayRunningContainers> == 'Yes'",
+          "RunOnlyIf": "()=> '<displayRunningContainers>' == 'Yes'",
           "DisplayText": "Will display the running containers",
           "Composer": "docker ps"
         },
@@ -305,7 +305,7 @@
         {
           "IsActive": true,
           "Type": "Command",
-          "RunOnlyIf": "()=> <displayRunningContainers> == 'Yes'",
+          "RunOnlyIf": "()=> '<displayRunningContainers>' == 'Yes'",
           "DisplayText": "Will display the running containers",
           "Composer": "docker ps"
         },
