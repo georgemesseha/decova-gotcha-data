@@ -1,507 +1,495 @@
 {
   "$schema": "https://raw.githubusercontent.com/georgemesseha/decova-gotcha-data/master/walkthroughs_schema.json",
-  "CreatedOn": "2021-02-27 09:42:30",
-  "Walkthroughs": [
+  "Walkthroughs": {
+    "Ops >> Find the process whose port":
     {
-      "IsActive": true,
-      "DisplayText": "Ops >> Find the process whose port",
-      "Shortcut": "find-process-whose-port",
       "Steps": [
         {
-          "IsActive": true,
-          "RunOnlyIf": "",
-          "Type": "Prompt",
-          "VarName": "port",
-          "DisplayText": "Port #",
-          "Regex": "^[0-9]{2,}$",
-          "Options": [],
-          "Composer": "()=> 'netstat -ano | findstr :<port>'"
+          "Prompt": {
+            "QuestionComposer": "'Port #'",
+            "VarNameComposer": "'port'",
+            "Regex": "^[0-9]{2,}$"
+          }
         },
         {
-          "IsActive": true,
-          "RunOnlyIf": "",
-          "Type": "Command",
-          "VarName": "",
-          "DisplayText": "Will find the ID of the process using a specific port.",
-          "Options": [],
-          "Composer": "()=> `netstat -ano | findstr :<port>`"
+          "Command": {
+            "WillDoHintComposer": "'Will find the ID of the process using a specific port.'",
+            "CommandComposer": "()=> `netstat -ano | findstr :<port>`"
+          }
         },
         {
-          "IsActive": true,
-          "RunOnlyIf": "",
-          "Type": "Prompt",
-          "VarName": "pid",
-          "DisplayText": "Pick a PID from the above list",
-          "Options": [],
-          "Regex": "[0-9]+",
-          "Composer": ""
+          "Prompt": {
+            "QuestionComposer": "'Pick a PID from the above list'",
+            "VarNameComposer": "'pid'",
+            "Regex": "[0-9]+"
+          }
         },
         {
-          "IsActive": true,
-          "RunOnlyIf": "",
-          "Type": "Command",
-          "VarName": "",
-          "DisplayText": "Will display info about the process whose PID = <pid>",
-          "Options": [],
-          "Composer": "tasklist /svc /FI \"PID eq <pid>\""
+          "Command": {
+            "WillDoHintComposer": "`Will display info about the process whose PID = <pid>`",
+            "CommandComposer": "`tasklist /svc /FI \"PID eq <pid>\"`"
+          }
         }
       ]
     },
-    {
-      "IsActive": true,
-      "DisplayText": "Ops >> vscode >> install & build & patch++ & publish #increment#push",
+    "Ops >> vscode >> install & build & patch++ & publish #increment#push":
+    {    
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will install the missing packages & update the outdated ones.",
-          "Composer": "npm install"
+          "Command": {
+            "CommandComposer": "npm install",
+            "WillDoHintComposer": "`Will install the missing packages & update the outdated ones.`"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will compile TypeScript",
-          "Composer": "tsc"
+          "Command": {
+            "CommandComposer": "tsc",
+            "WillDoHintComposer": "Will compile TypeScript"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will increment the version's path no. of the current workspace's package.json",
-          "Composer": "g patch++"
+          "Command": {
+            "CommandComposer": "g patch++",
+            "WillDoHintComposer": "`Will increment the version's path no. of the current workspace's package.json`"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will publish the currently being developed package to npm repo.",
-          "Composer": "npm publish"
+          "Command": {
+            "CommandComposer": "npm publish",
+            "WillDoHintComposer": "Will publish the currently being developed package to npm repo."
+          }
         }
       ]
     },
+    "Ops >> vscode >> Writing Extension >> Pack your extension":
     {
-      "IsActive": true,
-      "DisplayText": "Ops >> vscode >> Writing Extension >> Pack your extension",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will compile TypeScript",
-          "Composer": "tsc"
+          "Command": {
+            "CommandComposer": "tsc",
+            "WillDoHintComposer": "Will compile TypeScript"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will increment the version's path no. of the current workspace's package.json",
-          "Composer": "g patch++"
+          "Command": {
+            "CommandComposer": "g patch++",
+            "WillDoHintComposer": "Will increment the version's path no. of the current workspace's package.json"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will package the extension locally as vsix",
-          "Composer": "vsce package"
+          "Command": {
+            "CommandComposer": "vsce package",
+            "WillDoHintComposer": "Will package the extension locally as vsix"
+          }
         }
       ]
     },
+    "Dev >> npm >> List direct dependencies":
     {
-      "IsActive": true,
-      "DisplayText": "Dev >> npm >> List direct dependencies",
       "Steps": [
         {
-          "IsActive": true,
-          "DisplayText": "Will list the direct dependencies of the currently developed package.",
-          "Type": "Command",
-          "Composer": "npm list --depth=0"
+          "Command": {
+            "WillDoHintComposer": "Will list the direct dependencies of the currently developed package.",
+            "CommandComposer": "npm list --depth=0"
+          }
         }
       ]
     },
+    "Dev >> npm >> List globally installed packages":
     {
-      "IsActive": true,
-      "DisplayText": "Dev >> npm >> List globally installed packages",
       "Steps": [
         {
-          "Type": "Command",
-          "IsActive": true,
-          "DisplayText": "Will list the globally installed packages.",
-          "Composer": "npm list --global --depth=0"
+          "Command": {
+            "WillDoHintComposer": "Will list the globally installed packages.",
+            "CommandComposer": "npm list --global --depth=0"
+          }
         }
       ]
     },
+    "Ops >> Docker >> Container >> List running containers #list#show":
     {
-      "IsActive": true,
-      "DisplayText": "Ops >> Docker >> Container >> List running containers #list#show",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will list the running containers",
-          "Composer": "docker ps"
+          "Command": {
+            "WillDoHintComposer": "Will list the running containers",
+            "CommandComposer": "docker ps"
+          }
         }
       ]
     },
+    "Ops >> Docker >> Export image to tar file":
     {
-      "IsActive": true,
-      "DisplayText": "Ops >> Docker >> Export image to tar file",
       "Steps": [
         {
-          "Type": "Prompt",
-          "DisplayText": "List images to pick from?",
-          "IsActive": true,
-          "VarName": "listImages",
-          "Options": ["Yes", "No"],
-          "Composer": ""
+          "Mcq": {
+            "QuestionComposer": "List images to pick from?",
+            "OptionsComposer": "['Yes', 'No']",
+            "VarNameComposer": "`listImages`"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Command",
-          "RunOnlyIf": "()=> '<listImages>' == 'Yes'",
-          "Composer": "docker image ls",
-          "DisplayText": ""
+          "RunOnlyIfComposer": "()=> '<listImages>' == 'Yes'",
+          "Command": {
+            "SkipPrompt": true,
+            "WillDoHintComposer": "Will list top level images in your local Docker repo",
+            "CommandComposer": "`docker image ls`"
+          }
         },
         {
-          "Type": "Prompt",
-          "VarName": "imageName",
-          "IsActive": true,
-          "DisplayText": "Image Name:",
-          "Composer": ""
+          "Prompt": {
+            "VarNameComposer": "`imageName`",
+            "QuestionComposer": "Image tag or ID?"
+          }
         },
         {
-          "Type": "Prompt",
-          "VarName": "outputFilePath",
-          "IsActive": true,
-          "DisplayText": "Output file path (without extension): ",
-          "Composer": ""
+          "Prompt": {
+            "VarNameComposer": "`outputFilePath`",
+            "QuestionComposer": "`Output file path (without extension)?`"
+          }
         },
         {
-          "Type": "Command",
-          "IsActive": true,
-          "DisplayText": "Will export image <imageName> to <outputFilePath>",
-          "Composer": "docker image save <imageName> -o <outputFilePath>"
+          "Command": {
+            "CommandComposer": "`docker image save <imageName> -o <outputFilePath>`",
+            "WillDoHintComposer": "Will export image <imageName> to <outputFilePath>"
+          }
         }
       ]
     },
+    "Ops >> Docker >> Container >> Bash inside a running docker container #cmd#command#cli":
     {
-      "IsActive": true,
-      "DisplayText": "Ops >> Docker >> Container >> Bash inside a running docker container #cmd#command#cli",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Prompt",
-          "VarName": "displayRunningContainers",
-          "Options": ["Yes", "No"],
-          "DisplayText": "List running containers?",
-          "Composer": ""
+          "Mcq": {
+            "VarNameComposer": "`displayRunningContainers`",
+            "OptionsComposer": "['Yes', 'No']",
+            "QuestionComposer": "`List running containers?`"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Command",
-          "RunOnlyIf": "()=> '<displayRunningContainers>' == 'Yes'",
-          "DisplayText": "Will display the running containers",
-          "Composer": "docker ps"
+          "RunOnlyIfComposer": "()=> '<displayRunningContainers>' == 'Yes'",
+
+          "Command": {
+            "WillDoHintComposer": "Will display the running containers",
+            "CommandComposer": "`docker ps`"
+          }
         },
         {
-          "Type": "Prompt",
-          "VarName": "containerName",
-          "IsActive": true,
-          "DisplayText": "Container name?",
-          "Composer": ""
+          "Prompt": {
+            "QuestionComposer": "`Container name?`",
+            "VarNameComposer": "`containerName`"
+          }
         },
         {
-          "Type": "Command",
-          "IsActive": true,
-          "DisplayText": "Will let you bash inside [<containerName>] container",
-          "Composer": "docker exec -u root -it <containerName> /bin/bash"
+          "Command": {
+            "WillDoHintComposer": "`Will let you bash inside [<containerName>] container`",
+            "CommandComposer": "`docker exec -u root -it <containerName> /bin/bash`"
+          }
         }
       ]
     },
+    "Ops >> Docker >> List images #display#show":
     {
-      "IsActive": true,
-      "DisplayText": "Ops >> Docker >> List images #display#show",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Command",
-          "Composer": "docker image ls",
-          "DisplayText": "Will list top level images"
+          "Command": {
+            "CommandComposer": "`docker image ls`",
+            "WillDoHintComposer": "`Will list top level images`"
+          }
         }
       ]
     },
+    "Ops >> Docker >> Pull image":
     {
-      "IsActive": true,
-      "DisplayText": "Ops >> Docker >> Pull image",
       "Steps": [
         {
-          "Type": "Prompt",
-          "VarName": "pullAllTags",
-          "IsActive": true,
-          "DisplayText": "Pull all tags?",
-          "Options": ["No", "Yes"],
-          "Composer": ""
+          "Mcq": {
+            "QuestionComposer": "`Pull all tags?`",
+            "VarNameComposer": "`pullAllTags`",
+            "OptionsComposer": "['Yes', 'No']"
+          }
         },
         {
-          "Type": "Prompt",
-          "DisplayText": "List images to pick from?",
-          "IsActive": true,
-          "VarName": "listImages",
-          "Options": ["Yes", "No"],
-          "Composer": ""
+          "Mcq": {
+            "QuestionComposer": "`List images to pick from?`",
+            "VarNameComposer": "listImages",
+            "OptionsComposer": "['Yes', 'No']"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Command",
-          "RunOnlyIf": "()=> '<listImages>' == 'Yes'",
-          "Composer": "docker image ls",
-          "DisplayText": ""
+          "RunOnlyIfComposer": "()=> '<listImages>' == 'Yes'",
+          "Command": {
+            "WillDoHintComposer": "`Will list top level docker images to pick from`",
+            "CommandComposer": "`docker image ls`",
+            "SkipPrompt": true
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Prompt",
-          "DisplayText": "Image name?",
-          "VarName": "imageName",
-          "Composer": ""
+          "Prompt": {
+            "QuestionComposer": "`Image name?`",
+            "VarNameComposer": "`imageName`"
+          }
         },
         {
-          "Type": "Command",
-          "IsActive": true,
-          "DisplayText": "Will pull image <imageName> to your local repo",
-          "Composer": "docker pull <imageName>"
+          "Command": {
+            "WillDoHintComposer": "`Will pull image <imageName> to your local repo`",
+            "CommandComposer": "`docker pull <imageName>`"
+          }
         }
       ]
     },
+    "Ops >> Docker >> Container >> List all running and stopped containers":
     {
-      "IsActive": true,
-      "DisplayText": "Ops >> Docker >> Container >> Copy a file/folder (Host --> Container)",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Prompt",
-          "VarName": "displayRunningContainers",
-          "Options": ["Yes", "No"],
-          "DisplayText": "List running containers?",
-          "Composer": ""
-        },
-        {
-          "IsActive": true,
-          "Type": "Command",
-          "RunOnlyIf": "()=> '<displayRunningContainers>' == 'Yes'",
-          "DisplayText": "Will display the running containers",
-          "Composer": "docker ps"
-        },
-        {
-          "IsActive": true,
-          "Type": "Prompt",
-          "DisplayText": "Container name?",
-          "VarName": "containerName",
-          "Composer": ""
-        },
-        {
-          "IsActive": true,
-          "Type": "Prompt",
-          "DisplayText": "Source file/directory path on host?",
-          "VarName": "srcPath",
-          "Composer": ""
-        },
-        {
-          "IsActive": true,
-          "Type": "Prompt",
-          "VarName": "dstPath",
-          "DisplayText": "Destination path inside the container?",
-          "Composer": ""
-        },
-        {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will copy the source File/Directory from you host to the container",
-          "Composer": "docker cp <srcPath> <containerName>:<dstPath>"
+          "Command": {
+            "CommandComposer": "`docker container ls -a`",
+            "WillDoHintComposer": "`Will list all running and stopped containers in your local docker repo`"
+          }
         }
       ]
     },
+    "Ops >> Docker >> Container >> Create new container":
     {
-      "IsActive": true,
-      "DisplayText": "Ops >> Docker >> Container >> Copy a file/folder (Container --> Host)",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Prompt",
-          "VarName": "displayRunningContainers",
-          "Options": ["Yes", "No"],
-          "DisplayText": "List running containers?",
-          "Composer": ""
+          "Prompt": {
+            "QuestionComposer": "`Image Tag or ID?`",
+            "VarNameComposer": "`imageName`"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Command",
-          "RunOnlyIf": "()=> '<displayRunningContainers>' == 'Yes'",
-          "DisplayText": "Will display the running containers",
-          "Composer": "docker ps"
+          "Prompt": {
+            "QuestionComposer": "`Given contaienr tag?`",
+            "VarNameComposer": "`containerTag`"
+          }
+        }
+
+
+      ]
+    },
+    "Ops >> Docker >> Container >> Display port mappings":
+    {
+      "Steps": [
+        {
+          "Command": {
+            "CommandComposer": "docker ps",
+            "WillDoHintComposer": "Will list the running container",
+            "SkipPrompt": true
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Prompt",
-          "DisplayText": "Container name?",
-          "VarName": "containerName",
-          "Composer": ""
+          "Prompt": {
+            "VarNameComposer": "`containerTag`",
+            "QuestionComposer": "`Container tag?`"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Prompt",
-          "DisplayText": "Source file/directory path on host?",
-          "VarName": "srcPath",
-          "Composer": ""
-        },
-        {
-          "IsActive": true,
-          "Type": "Prompt",
-          "VarName": "dstPath",
-          "DisplayText": "Destination path inside the container?",
-          "Composer": ""
-        },
-        {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will copy the source File/Directory from the container to your host machine",
-          "Composer": "docker cp <containerName>:<srcPath> <dstPath>"
+          "Command": {
+            "CommandComposer": "`docker port <containerTag>`",
+            "WillDoHintComposer": "`docker port <containerTag>`"
+          }
         }
       ]
     },
+    "Ops >> Docker >> Container >> Copy a file/folder (Host --> Container)":
     {
-      "IsActive": true,
-      "DisplayText": "Dev >> npm >> Find unused and missing dependencies/packages",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will find the unused and missing dependencies/packages",
-          "Composer": "depcheck"
+          "Mcq": {
+            "QuestionComposer": "`List running containers?`",
+            "VarNameComposer": "`displayRunningContainers`",
+            "OptionsComposer": "['Yes', 'No']"
+          }
+        },
+        {
+          "RunOnlyIfComposer": "()=> '<displayRunningContainers>' == 'Yes'",
+          "Command": {
+            "CommandComposer": "`docker ps`",
+            "WillDoHintComposer": "Will display the running containers"
+          }
+        },
+        {
+          "Prompt": {
+            "VarNameComposer": "`containerName`",
+            "QuestionComposer": "`Container name?`"
+          }
+        },
+        {
+          "Prompt": {
+            "QuestionComposer": "`Source file/directory path on host?`",
+            "VarNameComposer": "`srcPath`"
+          }
+        },
+        {
+          "Prompt": {
+            "QuestionComposer": "`Destination path inside the container?`",
+            "VarNameComposer": "`dstPath`"
+          }
+        },
+        {
+          "Command": {
+            "CommandComposer": "`docker cp <srcPath> <containerName>:<dstPath>`",
+            "WillDoHintComposer": "`Will copy the source File/Directory from you host to the container`"
+          }
         }
       ]
     },
+    "Ops >> Docker >> Container >> Copy a file/folder (Container --> Host)":
     {
-      "IsActive": true,
-      "DisplayText": "Poyka >> Open old poyka browsing mechanism",
-      "Type": "Command",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "g >> Old Poyka >> Open #legacy",
-          "Composer": "g open-old-poyka"
+          "Command": {
+            "CommandComposer": "()=> '<displayRunningContainers>' == 'Yes'",
+            "WillDoHintComposer": "Will display the running containers"
+          }
+        },
+        {
+          "Prompt": {
+            "QuestionComposer": "`Container name?`",
+            "VarNameComposer": "`containerName`"
+          }
+        },
+        {
+          "Prompt": {
+            "QuestionComposer": "`Source file/directory path on host?`",
+            "VarNameComposer": "`srcPath`"
+          }
+        },
+        {
+          "Prompt": {
+            "QuestionComposer": "`Destination path inside the container?`",
+            "VarNameComposer": "`dstPath`"
+          }
+        },
+        {
+          "Command": {
+            "CommandComposer": "`docker cp <containerName>:<srcPath> <dstPath>`",
+            "WillDoHintComposer": "`Will copy the source File/Directory from the container to your host machine`"
+          }
         }
       ]
     },
+    "Dev >> npm >> Find unused and missing dependencies/packages":
     {
-      "IsActive": true,
-      "DisplayText": "Dev >> My Projects >> Develop >> decova-gotcha",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will open Gtch workspace for you to develop",
-          "Composer": "code G:/_MyProjects/_MyNodeProjects/decova-gotcha"
+          "Command": {
+            "CommandComposer": "`depcheck`",
+            "WillDoHintComposer": "`Will find the unused and missing dependencies/packages`"
+          }
         }
       ]
     },
+    "Poyka >> Open old poyka browsing mechanism":
     {
-      "IsActive": true,
-      "DisplayText": "Ops >> Node >> Workspace >> Increment patch and update dependent workspaces #patch++",
-      "Shortcut": "patch++",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will increment package's patch, then optionaly update dpenendent workspaces.",
-          "Composer": "g patch++"
+          "Command": {
+            "CommandComposer": "`g open-old-poyka`",
+            "WillDoHintComposer": "g >> Old Poyka >> Open #legacy"
+          }
         }
       ]
     },
+    "Dev >> My Projects >> Develop >> decova-gotcha":
     {
-      "IsActive": true,
-      "DisplayText": "Ops >> Gotcha >> Edit my code snippets #augment",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will guide you to edit Walkthroughs",
-          "Composer": "g edit-snippets"
+          "Command": {
+            "CommandComposer": "`code G:/_MyProjects/_MyNodeProjects/decova-gotcha`",
+            "WillDoHintComposer": "`Will open Gtch workspace for you to develop`"
+          }
         }
       ]
     },
+    "Ops >> Node >> Workspace >> Increment patch and update dependent workspaces #patch++":
     {
-      "IsActive": true,
-      "DisplayText": "Ops >> Gotcha >> Add a new LocalTool",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "Will open decova-gotcha workspace in VSCode",
-          "Composer": "code G:/_MyProjects/_MyNodeProjects/decova-gotcha"
-        },
-        {
-          "IsActive": true,
-          "Type": "Instruction",
-          "DisplayText": "",
-          "Composer": "Ctrl P / LTool_ to find where to put your new tool .ts file"
-        },
-        {
-          "IsActive": true,
-          "Type": "Instruction",
-          "DisplayText": "",
-          "Composer": "Create a new LTool_{TOOL_NAME}.ts file and implement ILocalTool"
-        },
-        {
-          "IsActive": true,
-          "Type": "Instruction",
-          "DisplayText": "",
-          "Composer": "Ctrl P / App.ts"
-        },
-        {
-          "IsActive": true,
-          "Type": "Instruction",
-          "DisplayText": "",
-          "Composer": "Ctrl F / RegisterLocalTools"
-        },
-        {
-          "IsActive": true,
-          "Type": "Instruction",
-          "DisplayText": "",
-          "Composer": "Add new {TOOLNAME();}"
-        },
-        {
-          "IsActive": true,
-          "Type": "Instruction",
-          "DisplayText": "",
-          "Composer": "Now your tool is able to be launched by g {shortcut} and will be listed automatically in Gotcha commands"
+          "Command": {
+            "WillDoHintComposer": "`Will increment package's patch, then optionaly update dpenendent workspaces.`",
+            "CommandComposer": "`g patch++`" 
+          }
         }
       ]
     },
+    "Ops >> Gotcha >> Edit my code snippets #augment":
     {
-      "DisplayText": "Dev >> Snippets >> Create a new code snippet",
-      "IsActive": true,
-      "Shortcut": "new-snippet",
       "Steps": [
         {
-          "IsActive": true,
-          "Type": "Instruction",
-          "DisplayText": "",
-          "Composer": "Select some code in VSCode"
+          "Command": {
+            "WillDoHintComposer": "`Will guide you to edit Walkthroughs`",
+            "CommandComposer": "`g edit-snippets`"
+          }
+        }
+      ]
+    },
+    "Ops >> Gotcha >> Add a new LocalTool":
+    {
+      "Steps": [
+        {
+          "Command": {
+            "WillDoHintComposer": "`Will open decova-gotcha workspace in VSCode`",
+            "CommandComposer": "`code G:/_MyProjects/_MyNodeProjects/decova-gotcha`"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Instruction",
-          "DisplayText": "",
-          "Composer": "Ctrl Shift P >> Convert to snippet"
+          "Instruction": {
+            "InstructionComposer": "`Ctrl P / LTool_ to find where to put your new tool .ts file`"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Instruction",
-          "DisplayText": "",
-          "Composer": "Copy your snippet from the Output window"
+          "Instruction": {
+            "InstructionComposer": "`Create a new LTool_{TOOL_NAME}.ts file and implement ILocalTool`"
+          }
         },
         {
-          "IsActive": true,
-          "Type": "Command",
-          "DisplayText": "You will be led to edit your global snippets",
-          "Composer": "g edit-snippets"
+          "Instruction": {
+            "InstructionComposer": "`Ctrl P / App.ts`"
+          }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "`Ctrl F / RegisterLocalTools`"
+          }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "`Add new {TOOLNAME();}`"
+          }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "`Now your tool is able to be launched by g {shortcut} and will be listed automatically in Gotcha commands`"
+          }
+        }
+      ]
+    },
+    "Dev >> Snippets >> Create a new code snippet":
+    {
+      "Steps": [
+        {
+          "Instruction": {
+            "InstructionComposer": "`Select some code in VSCode`"
+          }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "`Ctrl Shift P >> Convert to snippet`"
+          }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "`Copy your snippet from the Output window`"
+          }
+        },
+        {
+          "Command": {
+            "CommandComposer": "`g edit-snippets`",
+            "WillDoHintComposer": "`You will be led to edit your global snippets`"
+          }
         }
       ]
     }
-  ]
+  }
 }
