@@ -313,7 +313,7 @@
         },
         {
           "Command": {
-            "CommandComposer": "`docker run <imageName> <portMapping>`"
+            "CommandComposer": "`docker run <portMapping> <imageName> `"
           }
         }
         
