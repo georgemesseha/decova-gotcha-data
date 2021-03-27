@@ -141,7 +141,8 @@
         {
           "Prompt": {
             "VarNameComposer": "`imageName`",
-            "QuestionComposer": "Image tag or ID?"
+            "QuestionComposer": "Image tag or ID?",
+            "Regex": "\\S{2,}"
           }
         },
         {
