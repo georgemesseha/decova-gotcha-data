@@ -3,13 +3,16 @@
   "Walkthroughs": {
     "Ops >> Find the process whose port":
     {
+      
       "Steps": [
         {
           "Prompt": {
             "QuestionComposer": "'Port #'",
             "VarNameComposer": "'port'",
             "Regex": "^[0-9]{2,}$"
-          }
+          },
+          "RunOnlyIfComposer": ""
+
         },
         {
           "Command": {
