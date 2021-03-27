@@ -47,7 +47,7 @@
         {
           "Command": {
             "CommandComposer": "tsc",
-            "WillDoHintComposer": "Will compile TypeScript"
+            "WillDoHintComposer": "`Will compile TypeScript`"
           }
         },
         {
@@ -59,7 +59,7 @@
         {
           "Command": {
             "CommandComposer": "npm publish",
-            "WillDoHintComposer": "Will publish the currently being developed package to npm repo."
+            "WillDoHintComposer": "`Will publish the currently being developed package to npm repo.`"
           }
         }
       ]
@@ -70,19 +70,19 @@
         {
           "Command": {
             "CommandComposer": "tsc",
-            "WillDoHintComposer": "Will compile TypeScript"
+            "WillDoHintComposer": "`Will compile TypeScript`"
           }
         },
         {
           "Command": {
             "CommandComposer": "g patch++",
-            "WillDoHintComposer": "Will increment the version's path no. of the current workspace's package.json"
+            "WillDoHintComposer": "`Will increment the version's path no. of the current workspace's package.json`"
           }
         },
         {
           "Command": {
             "CommandComposer": "vsce package",
-            "WillDoHintComposer": "Will package the extension locally as vsix"
+            "WillDoHintComposer": "`Will package the extension locally as vsix`"
           }
         }
       ]
@@ -92,8 +92,8 @@
       "Steps": [
         {
           "Command": {
-            "WillDoHintComposer": "Will list the direct dependencies of the currently developed package.",
-            "CommandComposer": "npm list --depth=0"
+            "WillDoHintComposer": "`Will list the direct dependencies of the currently developed package.`",
+            "CommandComposer": "`npm list --depth=0`"
           }
         }
       ]
@@ -103,7 +103,7 @@
       "Steps": [
         {
           "Command": {
-            "WillDoHintComposer": "Will list the globally installed packages.",
+            "WillDoHintComposer": "`Will list the globally installed packages.`",
             "CommandComposer": "npm list --global --depth=0"
           }
         }
