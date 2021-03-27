@@ -310,6 +310,11 @@
               }
             ]
           }
+        },
+        {
+          "Command": {
+            "CommandComposer": "`docker run <imageName> <portMapping>`"
+          }
         }
         
       ]
