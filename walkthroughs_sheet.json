@@ -255,6 +255,13 @@
     {
       "Steps": [
         {
+          "Command": {
+            "CommandComposer": "`docker image ls`",
+            "WillDoHintComposer": "`Will list all local images to pick from`",
+            "SkipPrompt": true
+          }
+        },
+        {
           "Prompt": {
             "QuestionComposer": "`Image Tag or ID?`",
             "VarNameComposer": "`imageName`"
@@ -265,9 +272,38 @@
             "QuestionComposer": "`Given contaienr tag?`",
             "VarNameComposer": "`containerTag`"
           }
+        },
+        {
+          "Repeater": {
+            "DoRepeatQuestionComposer": "Want to add port mapping?",
+            "IterationSteps": [
+              {
+                "Prompt": {
+                  "VarNameComposer": "`externalPort_<i>`",
+                  "QuestionComposer": "External Port #<i>",
+                  "Regex": "[0-9]+"
+                }
+              },
+              {
+                "Command": {
+                  "CommandComposer": "`-p externalPort_<i>:`"
+                }
+              },
+              {
+                "Prompt": {
+                  "VarNameComposer": "`internalPort_<i>`",
+                  "QuestionComposer": "Internal Port #<i>",
+                  "Regex": "[0-9]+"
+                }
+              },
+              {
+                "Command": {
+                  "CommandComposer": "`internalPort_<i> `"
+                }
+              }
+            ]
+          }
         }
-
-
       ]
     },
     "Ops >> Docker >> Container >> Display port mappings":
