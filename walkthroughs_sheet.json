@@ -40,25 +40,25 @@
       "Steps": [
         {
           "Command": {
-            "CommandComposer": "npm install",
+            "CommandComposer": "`npm install`",
             "WillDoHintComposer": "`Will install the missing packages & update the outdated ones.`"
           }
         },
         {
           "Command": {
-            "CommandComposer": "tsc",
+            "CommandComposer": "`tsc`",
             "WillDoHintComposer": "`Will compile TypeScript`"
           }
         },
         {
           "Command": {
-            "CommandComposer": "g patch++",
+            "CommandComposer": "`g patch++`",
             "WillDoHintComposer": "`Will increment the version's path no. of the current workspace's package.json`"
           }
         },
         {
           "Command": {
-            "CommandComposer": "npm publish",
+            "CommandComposer": "`npm publish`",
             "WillDoHintComposer": "`Will publish the currently being developed package to npm repo.`"
           }
         }
@@ -69,19 +69,19 @@
       "Steps": [
         {
           "Command": {
-            "CommandComposer": "tsc",
+            "CommandComposer": "`tsc`",
             "WillDoHintComposer": "`Will compile TypeScript`"
           }
         },
         {
           "Command": {
-            "CommandComposer": "g patch++",
+            "CommandComposer": "`g patch++`",
             "WillDoHintComposer": "`Will increment the version's path no. of the current workspace's package.json`"
           }
         },
         {
           "Command": {
-            "CommandComposer": "vsce package",
+            "CommandComposer": "`vsce package`",
             "WillDoHintComposer": "`Will package the extension locally as vsix`"
           }
         }
@@ -104,7 +104,7 @@
         {
           "Command": {
             "WillDoHintComposer": "`Will list the globally installed packages.`",
-            "CommandComposer": "npm list --global --depth=0"
+            "CommandComposer": "`npm list --global --depth=0`"
           }
         }
       ]
@@ -114,8 +114,8 @@
       "Steps": [
         {
           "Command": {
-            "WillDoHintComposer": "Will list the running containers",
-            "CommandComposer": "docker ps"
+            "WillDoHintComposer": "`Will list the running containers`",
+            "CommandComposer": "`docker ps`"
           }
         }
       ]
@@ -125,7 +125,7 @@
       "Steps": [
         {
           "Mcq": {
-            "QuestionComposer": "List images to pick from?",
+            "QuestionComposer": "`List images to pick from?`",
             "OptionsComposer": "['Yes', 'No']",
             "VarNameComposer": "`listImages`"
           }
