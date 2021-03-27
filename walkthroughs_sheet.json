@@ -327,8 +327,8 @@
       "Steps": [
         {
           "Command": {
-            "CommandComposer": "docker ps",
-            "WillDoHintComposer": "Will list the running container",
+            "CommandComposer": "`docker ps`",
+            "WillDoHintComposer": "`Will list the running container`",
             "SkipPrompt": true
           }
         },
@@ -361,7 +361,7 @@
           "RunOnlyIfComposer": "()=> '<displayRunningContainers>' == 'Yes'",
           "Command": {
             "CommandComposer": "`docker ps`",
-            "WillDoHintComposer": "Will display the running containers"
+            "WillDoHintComposer": "`Will display the running containers`"
           }
         },
         {
@@ -399,7 +399,7 @@
         {
           "Command": {
             "CommandComposer": "()=> '<displayRunningContainers>' == 'Yes'",
-            "WillDoHintComposer": "Will display the running containers"
+            "WillDoHintComposer": "`Will display the running containers`"
           }
         },
         {
@@ -448,7 +448,7 @@
         {
           "Command": {
             "CommandComposer": "`g open-old-poyka`",
-            "WillDoHintComposer": "g >> Old Poyka >> Open #legacy"
+            "WillDoHintComposer": "`g >> Old Poyka >> Open #legacy`"
           }
         }
       ]
