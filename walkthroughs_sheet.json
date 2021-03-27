@@ -283,26 +283,26 @@
                   "IterationSteps": [
                     {
                       "Prompt": {
-                        "VarNameComposer": "`externalPort_<i>`",
-                        "QuestionComposer": "External Port #<i>",
+                        "VarNameComposer": "`externalPort`",
+                        "QuestionComposer": "External Port",
                         "Regex": "[0-9]+"
                       }
                     },
                     {
                       "Command": {
-                        "CommandComposer": "`-p externalPort_<i>:`"
+                        "CommandComposer": "` -p <externalPort>:`"
                       }
                     },
                     {
                       "Prompt": {
-                        "VarNameComposer": "`internalPort_<i>`",
-                        "QuestionComposer": "Internal Port #<i>",
+                        "VarNameComposer": "`internalPort`",
+                        "QuestionComposer": "Internal Port",
                         "Regex": "[0-9]+"
                       }
                     },
                     {
                       "Command": {
-                        "CommandComposer": "`internalPort_<i> `"
+                        "CommandComposer": "`<internalPort>`"
                       }
                     }
                   ]
