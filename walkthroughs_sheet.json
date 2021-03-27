@@ -265,13 +265,15 @@
         {
           "Prompt": {
             "QuestionComposer": "`Image Tag or ID?`",
-            "VarNameComposer": "`imageName`"
+            "VarNameComposer": "`imageName`",
+            "Regex": "^\\S{2,}$"
           }
         },
         {
           "Prompt": {
             "QuestionComposer": "`Given contaienr tag?`",
-            "VarNameComposer": "`containerTag`"
+            "VarNameComposer": "`containerTag`",
+            "Regex": "^\\S{2,}$"
           }
         },
         {
@@ -333,7 +335,8 @@
         {
           "Prompt": {
             "VarNameComposer": "`containerTag`",
-            "QuestionComposer": "`Container tag?`"
+            "QuestionComposer": "`Container tag?`",
+            "Regex": "^\\S{2,}$"
           }
         },
         {
@@ -364,19 +367,22 @@
         {
           "Prompt": {
             "VarNameComposer": "`containerName`",
-            "QuestionComposer": "`Container name?`"
+            "QuestionComposer": "`Container name?`",
+            "Regex": "^\\S{2,}$"
           }
         },
         {
           "Prompt": {
             "QuestionComposer": "`Source file/directory path on host?`",
-            "VarNameComposer": "`srcPath`"
+            "VarNameComposer": "`srcPath`",
+            "Regex": "^\\S{4,}$"
           }
         },
         {
           "Prompt": {
             "QuestionComposer": "`Destination path inside the container?`",
-            "VarNameComposer": "`dstPath`"
+            "VarNameComposer": "`dstPath`",
+            "Regex": "^\\S{4,}$"
           }
         },
         {
@@ -399,19 +405,22 @@
         {
           "Prompt": {
             "QuestionComposer": "`Container name?`",
-            "VarNameComposer": "`containerName`"
+            "VarNameComposer": "`containerName`",
+            "Regex": "^\\S{2,}$"
           }
         },
         {
           "Prompt": {
             "QuestionComposer": "`Source file/directory path on host?`",
-            "VarNameComposer": "`srcPath`"
+            "VarNameComposer": "`srcPath`",
+            "Regex": "^\\S{4,}$"
           }
         },
         {
           "Prompt": {
             "QuestionComposer": "`Destination path inside the container?`",
-            "VarNameComposer": "`dstPath`"
+            "VarNameComposer": "`dstPath`",
+            "Regex": "^\\S{4,}$"
           }
         },
         {
