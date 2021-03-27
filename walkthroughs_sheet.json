@@ -274,36 +274,44 @@
           }
         },
         {
-          "Repeater": {
-            "DoRepeatQuestionComposer": "Want to add port mapping?",
-            "IterationSteps": [
+          "Aggregator": {
+            "OutputVarName": "portMapping",
+            "Steps": [
               {
-                "Prompt": {
-                  "VarNameComposer": "`externalPort_<i>`",
-                  "QuestionComposer": "External Port #<i>",
-                  "Regex": "[0-9]+"
-                }
-              },
-              {
-                "Command": {
-                  "CommandComposer": "`-p externalPort_<i>:`"
-                }
-              },
-              {
-                "Prompt": {
-                  "VarNameComposer": "`internalPort_<i>`",
-                  "QuestionComposer": "Internal Port #<i>",
-                  "Regex": "[0-9]+"
-                }
-              },
-              {
-                "Command": {
-                  "CommandComposer": "`internalPort_<i> `"
+                "Repeater": {
+                  "DoRepeatQuestionComposer": "Add port mapping?",
+                  "IterationSteps": [
+                    {
+                      "Prompt": {
+                        "VarNameComposer": "`externalPort_<i>`",
+                        "QuestionComposer": "External Port #<i>",
+                        "Regex": "[0-9]+"
+                      }
+                    },
+                    {
+                      "Command": {
+                        "CommandComposer": "`-p externalPort_<i>:`"
+                      }
+                    },
+                    {
+                      "Prompt": {
+                        "VarNameComposer": "`internalPort_<i>`",
+                        "QuestionComposer": "Internal Port #<i>",
+                        "Regex": "[0-9]+"
+                      }
+                    },
+                    {
+                      "Command": {
+                        "CommandComposer": "`internalPort_<i> `"
+                      }
+                    }
+                  ]
                 }
               }
             ]
           }
         }
+        
       ]
     },
     "Ops >> Docker >> Container >> Display port mappings":
