@@ -173,7 +173,7 @@
           "RunOnlyIfComposer": "()=> '<displayRunningContainers>' == 'Yes'",
 
           "Command": {
-            "WillDoHintComposer": "Will display the running containers",
+            "WillDoHintComposer": "`Will display the running containers`",
             "CommandComposer": "`docker ps`"
           }
         },
