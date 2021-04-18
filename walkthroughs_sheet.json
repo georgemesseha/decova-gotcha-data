@@ -279,7 +279,7 @@
         },
         {
           "Aggregator": {
-            "OutputVarName": "portMapping",
+            "OutputVarName": "portMappings",
             "Steps": [
               {
                 "Repeater": {
@@ -305,7 +305,7 @@
         },
         {
           "Command": {
-            "CommandComposer": "`docker run <portMapping> <imageName> `"
+            "CommandComposer": "`docker run <portMappings> <imageName> `"
           }
         }
         
