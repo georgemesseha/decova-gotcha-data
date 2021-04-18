@@ -287,26 +287,14 @@
                   "IterationSteps": [
                     {
                       "Prompt": {
-                        "VarNameComposer": "`externalPort`",
-                        "QuestionComposer": "`External Port`",
-                        "Regex": "[0-9]+"
+                        "VarNameComposer": "`portMapping`",
+                        "QuestionComposer": "`Port mapping`",
+                        "Regex": "^[0-9]+\\:[0-9]+$"
                       }
                     },
                     {
                       "Command": {
-                        "CommandComposer": "` -p <externalPort>:`"
-                      }
-                    },
-                    {
-                      "Prompt": {
-                        "VarNameComposer": "`internalPort`",
-                        "QuestionComposer": "`Internal Port`",
-                        "Regex": "[0-9]+"
-                      }
-                    },
-                    {
-                      "Command": {
-                        "CommandComposer": "`<internalPort>`"
+                        "CommandComposer": "` -p <portMapping>`"
                       }
                     }
                   ]
