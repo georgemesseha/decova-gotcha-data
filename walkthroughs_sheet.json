@@ -37,6 +37,7 @@
     },
     "Ops >> vscode >> install & build & patch++ & publish #increment#push":
     {    
+      "Shortcut": "++",
       "Steps": [
         {
           "Command": {
