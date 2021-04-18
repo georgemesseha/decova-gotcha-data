@@ -304,7 +304,7 @@
                 "Mcq": {
                   "QuestionComposer": "`Attach terminal?`",
                   "OptionsComposer": "['1- Yes', '0- No']",
-                  "VarNameComposer": "attached"
+                  "VarNameComposer": "`attached`"
                 }
               },
               {
@@ -316,7 +316,7 @@
                 "Mcq": {
                   "QuestionComposer": "`Read only container?`",
                   "OptionsComposer": "['1- Yes', '0- No']",
-                  "VarNameComposer": "readonly"
+                  "VarNameComposer": "`readonly`"
                 }
               },
               {
@@ -328,7 +328,7 @@
                 "Mcq": {
                   "QuestionComposer": "`Auto remove on exit?`",
                   "OptionsComposer": "['1- Yes', '0- No']",
-                  "VarNameComposer": "autoRemove"
+                  "VarNameComposer": "`autoRemove`"
                 }
               },
               {
@@ -340,7 +340,7 @@
                 "Mcq": {
                   "QuestionComposer": "`Restart Policy?`",
                   "OptionsComposer": "['Always', 'Never', 'OnFailure', 'unless-stopped']",
-                  "VarNameComposer": "restartPolicy"
+                  "VarNameComposer": "`restartPolicy`"
                 }
               },
               {
@@ -352,21 +352,21 @@
                 "Mcq": {
                   "QuestionComposer": "`Add volume?`",
                   "OptionsComposer": "['1- Yes', '0- No']",
-                  "VarNameComposer": "addVolume"
+                  "VarNameComposer": "`addVolume`"
                 }
               },
               {
                 "RunOnlyIfComposer": "()=>`<addVolume>` == `1- Yes`",
                 "Prompt": {
                   "QuestionComposer": "`Host shared dir?`",
-                  "VarNameComposer": "hostSharedDir"
+                  "VarNameComposer": "`hostSharedDir`"
                 }
               },
               {
                 "RunOnlyIfComposer": "()=>`<addVolume>` == `1- Yes`",
                 "Prompt": {
                   "QuestionComposer": "`Corresponding contaienr dir?`",
-                  "VarNameComposer": "containerDir"
+                  "VarNameComposer": "`containerDir`"
                 }
               },
               {
