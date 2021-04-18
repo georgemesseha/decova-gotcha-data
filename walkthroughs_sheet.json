@@ -279,7 +279,7 @@
         },
         {
           "Aggregator": {
-            "OutputVarName": "portMappings",
+            "OutputVarName": "options",
             "Steps": [
               {
                 "Repeater": {
@@ -299,13 +299,87 @@
                     }
                   ]
                 }
+              },
+              {
+                "Mcq": {
+                  "QuestionComposer": "`Attach terminal?`",
+                  "OptionsComposer": "['1- Yes', '0- No']",
+                  "VarNameComposer": "attached"
+                }
+              },
+              {
+                "Command": {
+                  "CommandComposer": "()=><attached> == '1- Yes'? ' -it' : null"
+                }
+              },
+              {
+                "Mcq": {
+                  "QuestionComposer": "`Read only container?`",
+                  "OptionsComposer": "['1- Yes', '0- No']",
+                  "VarNameComposer": "readonly"
+                }
+              },
+              {
+                "Command": {
+                  "CommandComposer": "()=><readonly> == '1- Yes'? ' --read-only' : null"
+                }
+              },
+              {
+                "Mcq": {
+                  "QuestionComposer": "`Auto remove on exit?`",
+                  "OptionsComposer": "['1- Yes', '0- No']",
+                  "VarNameComposer": "autoRemove"
+                }
+              },
+              {
+                "Command": {
+                  "CommandComposer": "()=><autoRemove> == '1- Yes'? ' -rm' : null"
+                }
+              },
+              {
+                "Mcq": {
+                  "QuestionComposer": "`Restart Policy?`",
+                  "OptionsComposer": "['Always', 'Never', 'OnFailure', 'unless-stopped']",
+                  "VarNameComposer": "restartPolicy"
+                }
+              },
+              {
+                "Command": {
+                  "CommandComposer": "function(){ switch(`<restartPolicy>`) { case `Always`: return ` always`; case `Never`: return ` no`; case `OnFailure`: return ` on-failure`; case `UnlessExplicitlyStopped`: return ` unless-stopped`; }}"
+                }
+              },
+              {
+                "Mcq": {
+                  "QuestionComposer": "`Add volume?`",
+                  "OptionsComposer": "['1- Yes', '0- No']",
+                  "VarNameComposer": "addVolume"
+                }
+              },
+              {
+                "RunOnlyIfComposer": "()=>`<addVolume>` == `1- Yes`",
+                "Prompt": {
+                  "QuestionComposer": "`Host shared dir?`",
+                  "VarNameComposer": "hostSharedDir"
+                }
+              },
+              {
+                "RunOnlyIfComposer": "()=>`<addVolume>` == `1- Yes`",
+                "Prompt": {
+                  "QuestionComposer": "`Corresponding contaienr dir?`",
+                  "VarNameComposer": "containerDir"
+                }
+              },
+              {
+                "Command": {
+                  "CommandComposer": " -v \"<hostSharedDir>\":\"<containerDir>\""
+                }
               }
             ]
           }
         },
         {
           "Command": {
-            "CommandComposer": "`docker run <portMappings> <imageName> `"
+            "CommandComposer": "`docker run <options> <imageName> `"
           }
         }
         
