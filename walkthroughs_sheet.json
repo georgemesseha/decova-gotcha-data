@@ -309,7 +309,7 @@
               },
               {
                 "Command": {
-                  "CommandComposer": "()=><attached> == '1- Yes'? ' -it' : null"
+                  "CommandComposer": "()=>`<attached>` == '1- Yes'? ' -it' : ''"
                 }
               },
               {
@@ -321,7 +321,7 @@
               },
               {
                 "Command": {
-                  "CommandComposer": "()=><readonly> == '1- Yes'? ' --read-only' : null"
+                  "CommandComposer": "()=>`<readonly>` == '1- Yes'? ' --read-only' : ''"
                 }
               },
               {
@@ -333,19 +333,19 @@
               },
               {
                 "Command": {
-                  "CommandComposer": "()=><autoRemove> == '1- Yes'? ' -rm' : null"
+                  "CommandComposer": "()=>`<autoRemove>` == '1- Yes'? ' --rm' : ''"
                 }
               },
               {
                 "Mcq": {
                   "QuestionComposer": "`Restart Policy?`",
-                  "OptionsComposer": "['Always', 'Never', 'OnFailure', 'unless-stopped']",
+                  "OptionsComposer": "['Always', 'Never', 'On failure', 'Unless Eplicitly Stopped']",
                   "VarNameComposer": "`restartPolicy`"
                 }
               },
               {
                 "Command": {
-                  "CommandComposer": "function(){ switch(`<restartPolicy>`) { case `Always`: return ` always`; case `Never`: return ` no`; case `OnFailure`: return ` on-failure`; case `UnlessExplicitlyStopped`: return ` unless-stopped`; }}"
+                  "CommandComposer": "()=>{ switch(`<restartPolicy>`) { case `Always`: return ` --restart always`; case `Never`: return ` --restart no`; case `On failure`: return ` --restart on-failure`; case `Unless Eplicitly Stopped`: return ` --restart unless-stopped`; }}"
                 }
               },
               {
@@ -371,7 +371,7 @@
               },
               {
                 "Command": {
-                  "CommandComposer": " -v \"<hostSharedDir>\":\"<containerDir>\""
+                  "CommandComposer": "` -v \"<hostSharedDir>\":\"<containerDir>\"`"
                 }
               }
             ]
