@@ -625,6 +625,48 @@
           }
         }
       ]
+    },
+    "Dev >> NodeJS >> Setup mocha in your project":
+    {
+      "Steps": [
+        {
+          "Command": {
+            "CommandComposer": "` npm i -D chai typescript nodemon supertest ts-node tsconfig-paths @types/node @types/chai @types/mocha @types/supertest`",
+            "WillDoHintComposer": "`Will install the required packages to get started with mocha`"
+          }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "`Add the following script in package.json`"
+          }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "`mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \"test/**/*.spec.ts\"`"
+          }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "Add 'test' folder to your workspace"
+          }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "`Create the first test file as some-name.spec.ts then start with the next code`"
+          }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "import { expect } from 'chai'"
+          }
+        },
+        
+        {
+          "Instruction": {
+            "InstructionComposer": "descirbe('description', ()=>{ it('description', ()=>{ console.log('hello from mocha')})})"
+          }
+        }
+      ]
     }
   }
 }
