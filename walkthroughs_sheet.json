@@ -615,6 +615,16 @@
           }
         }
       ]
+    },
+    "Dev >> NodeJS >> package.json >> Generate script >> Test with mocha":
+    {
+      "Steps": [
+        {
+          "Instruction": {
+            "InstructionComposer": "`mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \"test/**/*.spec.ts\"`"
+          }
+        }
+      ]
     }
   }
 }
