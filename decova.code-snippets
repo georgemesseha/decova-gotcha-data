@@ -1,4 +1,29 @@
     {
+        
+    "Launch_Debug_Mocha": {
+        "prefix": "ss.mocha.launchSettings",
+        "body": [
+            "{\r",
+            "    \"type\": \"node\",\r",
+            "    \"request\": \"launch\",\r",
+            "    \"name\": \"Mocha All\",\r",
+            "    \"program\": \"${workspaceFolder}/node_modules/mocha/bin/_mocha\",\r",
+            "    \"args\": [\r",
+            "        \"-r\",\r",
+            "        \"ts-node/register\",\r",
+            "        \"--timeout\",\r",
+            "        \"999999\",\r",
+            "        \"--colors\",\r",
+            "        \"${workspaceFolder}/modules/**/*-spec.ts\",\r",
+            "    ],\r",
+            "    \"console\": \"integratedTerminal\",\r",
+            "    \"internalConsoleOptions\": \"neverOpen\",\r",
+            "    \"protocol\": \"inspector\"\r",
+            "}"
+        ],
+        "description": "A launch configuration that configure launching mocha test in debug mode"
+    },
+        
     "Terminal Mcq Prompt":{
         "prefix": "ss.terminal.mcq", // the snippet suggestion code editor show up for you.
         "body": [ // contains the code lines.
