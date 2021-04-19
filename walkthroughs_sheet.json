@@ -616,7 +616,7 @@
         }
       ]
     },
-    "Dev >> NodeJS >> package.json >> Generate script >> Test with mocha":
+    "Dev >> NodeJS >> Unit Test >> package.json >> Generate script >> Test with mocha":
     {
       "Steps": [
         {
@@ -626,7 +626,7 @@
         }
       ]
     },
-    "Dev >> NodeJS >> Setup mocha in your project":
+    "Dev >> NodeJS >> Unit Test >> Setup mocha in your project":
     {
       "Steps": [
         {
@@ -660,10 +660,15 @@
             "InstructionComposer": "`import { expect } from 'chai'`"
           }
         },
-        
         {
           "Instruction": {
             "InstructionComposer": "`describe('description', ()=>{ it('description', ()=>{ console.log('hello from mocha')})})`"
+          }
+        },
+        {
+          "Command": {
+            "CommandComposer": "`npm test`",
+            "WillDoHintComposer": "`Will test that it's working`"
           }
         }
       ]
