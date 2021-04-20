@@ -670,6 +670,11 @@
             "CommandComposer": "`npm test`",
             "WillDoHintComposer": "`Will test that it's working`"
           }
+        },
+        {
+          "Command": {
+            "CommandComposer": ""
+          }
         }
       ]
     }
