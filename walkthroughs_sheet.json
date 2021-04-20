@@ -566,7 +566,7 @@
         },
         {
           "Instruction": {
-            "InstructionComposer": "`class LTool_<ToolName> implements ILocalTool {}`"
+            "InstructionComposer": "`class LTool_<toolName> implements ILocalTool {}`"
           }
         },
         {
@@ -581,7 +581,7 @@
         },
         {
           "Instruction": {
-            "InstructionComposer": "`Add [new <toolName>(),]`"
+            "InstructionComposer": "`Add [new LTool_<toolName>(),]`"
           }
         },
         {
