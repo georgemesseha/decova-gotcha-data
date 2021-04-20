@@ -35,16 +35,10 @@
         }
       ]
     },
-    "Ops >> vscode >> install & build & patch++ & publish #increment#push":
+    "Ops >> vscode >> build & patch++ & publish #increment#push":
     {    
       "Shortcut": "++",
       "Steps": [
-        {
-          "Command": {
-            "CommandComposer": "`npm install`",
-            "WillDoHintComposer": "`Will install the missing packages & update the outdated ones.`"
-          }
-        },
         {
           "Command": {
             "CommandComposer": "`tsc`",
