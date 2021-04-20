@@ -1,20 +1,20 @@
 {
+    "unit-test describe": {
+        "prefix": "ss.unit-test.describe",
+        "body": [
+            "describe('description', () =>\r",
+            "{\r",
+            "    it('description', () =>\r",
+            "    {\r",
+            "        console.log('hello from mocha')\r",
+            "    })\r",
+            "})"
+        ],
+        "description": "Generates a decribe snippet in TypeScript unit test spec file"
+    },
     "Launch_Debug_Mocha": {
         "prefix": "ss.mocha.launchSettings",
         "body": [
-            "unit-test describe": {
-                "prefix": "ss.unit-test.describe",
-                "body": [
-                    "describe('description', () =>\r",
-                    "{\r",
-                    "    it('description', () =>\r",
-                    "    {\r",
-                    "        console.log('hello from mocha')\r",
-                    "    })\r",
-                    "})"
-                ],
-                "description": "Generates a decribe snippet in TypeScript unit test spec file"
-            },
             "{\r",
             "    \"type\": \"node\",\r",
             "    \"request\": \"launch\",\r",
