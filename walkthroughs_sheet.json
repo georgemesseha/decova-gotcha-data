@@ -35,7 +35,7 @@
         }
       ]
     },
-    "Ops >> vscode >> build & patch++ & publish #increment#push":
+    "Ops >> NodeJS >> build & patch++ & publish #increment#push":
     {    
       "Shortcut": "++",
       "Steps": [
