@@ -35,16 +35,10 @@
         }
       ]
     },
-    "Ops >> vscode >> install & build & patch++ & publish #increment#push":
+    "Ops >> vscode >> build & patch++ & publish #increment#push":
     {    
       "Shortcut": "++",
       "Steps": [
-        {
-          "Command": {
-            "CommandComposer": "`npm install`",
-            "WillDoHintComposer": "`Will install the missing packages & update the outdated ones.`"
-          }
-        },
         {
           "Command": {
             "CommandComposer": "`tsc`",
@@ -216,7 +210,7 @@
         {
           "Mcq": {
             "QuestionComposer": "`List images to pick from?`",
-            "VarNameComposer": "listImages",
+            "VarNameComposer": "`listImages`",
             "OptionsComposer": "['Yes', 'No']"
           }
         },
@@ -559,6 +553,11 @@
           }
         },
         {
+          "Prompt": {
+            
+          }
+        },
+        {
           "Instruction": {
             "InstructionComposer": "`Ctrl P / LTool_ to find where to put your new tool .ts file`"
           }
@@ -613,6 +612,12 @@
             "CommandComposer": "`g edit-snippets`",
             "WillDoHintComposer": "`You will be led to edit your global snippets`"
           }
+        },
+        {
+          "Command": {
+            "CommandComposer": "`g copy-vscode-file decova.code-snippets`",
+            "WillDoHintComposer": "`Will update current workspace with the new decova.code-snippets`"
+          }
         }
       ]
     },
@@ -631,7 +636,7 @@
       "Steps": [
         {
           "Command": {
-            "CommandComposer": "` npm i -D mocha chai typescript nodemon supertest ts-node tsconfig-paths @types/node @types/chai @types/mocha @types/supertest`",
+            "CommandComposer": "`npm i -D mocha chai typescript nodemon supertest ts-node tsconfig-paths @types/node @types/chai @types/mocha @types/supertest`",
             "WillDoHintComposer": "`Will install the required packages to get started with mocha`"
           }
         },
@@ -642,7 +647,7 @@
         },
         {
           "Instruction": {
-            "InstructionComposer": "`mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \"test/**/*.spec.ts\"`"
+            "InstructionComposer": "`mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \\\"test/**/*.spec.ts\\\"`"
           }
         },
         {
