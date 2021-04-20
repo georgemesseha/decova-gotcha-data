@@ -1,21 +1,4 @@
 {
-    "test-snippet": {
-        "prefix": "ss.snippet",
-        "body": [
-            "const dir = PathMan.GotchaLocalRepo_TextSnippets_Dir\r",
-            "        dir.Ensure()\r",
-            "\r",
-            "        let fileNames = dir.GetFiles().Select(f=>f.Name)\r",
-            "        let options:any = {}\r",
-            "        fileNames.Foreach(fn=> options[fn] = fn)\r",
-            "\r",
-            "        const fileName = await CurrentTerminal.McqAsync(\"Pick a text snippet\", options)\r",
-            "        console.log('fileName', fileName)\r",
-            "        const filePath = Path.Join(dir.FullName, fileName)\r",
-            "        TerminalAgent.Exec(`\"${filePath}\"`)"
-        ],
-        "description": "asldfjalksdfja"
-    },
     "Launch_Debug_Mocha": {
         "prefix": "ss.mocha.launchSettings",
         "body": [
