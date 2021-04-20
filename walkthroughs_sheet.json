@@ -631,7 +631,7 @@
       "Steps": [
         {
           "Command": {
-            "CommandComposer": "` npm i -D mocha chai typescript nodemon supertest ts-node tsconfig-paths @types/node @types/chai @types/mocha @types/supertest`",
+            "CommandComposer": "`npm i -D mocha chai typescript nodemon supertest ts-node tsconfig-paths @types/node @types/chai @types/mocha @types/supertest`",
             "WillDoHintComposer": "`Will install the required packages to get started with mocha`"
           }
         },
@@ -642,7 +642,7 @@
         },
         {
           "Instruction": {
-            "InstructionComposer": "`mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \"test/**/*.spec.ts\"`"
+            "InstructionComposer": "`mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \\\"test/**/*.spec.ts\\\"`"
           }
         },
         {
