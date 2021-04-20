@@ -561,12 +561,12 @@
         },
         {
           "Instruction": {
-            "InstructionComposer": "`[Ctrl P / LTool_] then create [LTool_<toolName>.ts] there`"
+            "InstructionComposer": "`[ Ctrl P / LTool_ ] then create [ LTool_<toolName>.ts ] there`"
           }
         },
         {
           "Instruction": {
-            "InstructionComposer": "`Create [class LTool_<ToolName>] that implement [ILocalTool]`"
+            "InstructionComposer": "`class LTool_<ToolName> implements ILocalTool {}`"
           }
         },
         {
