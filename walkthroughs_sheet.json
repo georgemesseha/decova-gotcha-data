@@ -554,7 +554,7 @@
         },
         {
           "Prompt": {
-            "QuestionComposer": "Tool name?",
+            "QuestionComposer": "`Tool name?`",
             "VarNameComposer": "`toolName`",
             "Regex": "^[A-z_]+$"
           }
