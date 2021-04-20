@@ -607,6 +607,12 @@
             "CommandComposer": "`g edit-snippets`",
             "WillDoHintComposer": "`You will be led to edit your global snippets`"
           }
+        },
+        {
+          "Command": {
+            "CommandComposer": "`g copy-vscode-file decova.code-snippets`",
+            "WillDoHintComposer": "`Will update current workspace with the new decova.code-snippets`"
+          }
         }
       ]
     },
