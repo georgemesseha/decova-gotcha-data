@@ -553,6 +553,11 @@
           }
         },
         {
+          "Prompt": {
+            
+          }
+        },
+        {
           "Instruction": {
             "InstructionComposer": "`Ctrl P / LTool_ to find where to put your new tool .ts file`"
           }
