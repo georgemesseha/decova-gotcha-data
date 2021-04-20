@@ -554,17 +554,19 @@
         },
         {
           "Prompt": {
-            
+            "QuestionComposer": "Tool name?",
+            "VarNameComposer": "`toolName`",
+            "Regex": "^[A-z_]+$"
           }
         },
         {
           "Instruction": {
-            "InstructionComposer": "`Ctrl P / LTool_ to find where to put your new tool .ts file`"
+            "InstructionComposer": "`[Ctrl P / LTool_] then create [LTool_<toolName>.ts] there`"
           }
         },
         {
           "Instruction": {
-            "InstructionComposer": "`Create a new LTool_{TOOL_NAME}.ts file and implement ILocalTool`"
+            "InstructionComposer": "`Create [class LTool_<ToolName>] that implement [ILocalTool]`"
           }
         },
         {
@@ -579,7 +581,7 @@
         },
         {
           "Instruction": {
-            "InstructionComposer": "`Add new {TOOLNAME();}`"
+            "InstructionComposer": "`Add [new <toolName>(),]`"
           }
         },
         {
