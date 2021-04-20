@@ -581,7 +581,7 @@
         },
         {
           "Instruction": {
-            "InstructionComposer": "`Add [new LTool_<toolName>(),]`"
+            "InstructionComposer": "`Add [ new LTool_<toolName>(), ]`"
           }
         },
         {
