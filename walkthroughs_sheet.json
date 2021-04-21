@@ -129,7 +129,7 @@
           "RunOnlyIfComposer": "()=> '<listImages>' == 'Yes'",
           "Command": {
             "SkipPrompt": true,
-            "WillDoHintComposer": "Will list top level images in your local Docker repo",
+            "WillDoHintComposer": "`Will list top level images in your local Docker repo`",
             "CommandComposer": "`docker image ls`"
           }
         },
