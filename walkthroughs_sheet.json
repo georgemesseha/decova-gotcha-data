@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/georgemesseha/decova-gotcha-data/master/walkthroughs_schema.json",
+  "$schema": "https://raw.githubusercontent.com/georgemesseha/decova-Ops >> Gotcha >>-data/master/walkthroughs_schema.json",
   "Walkthroughs": {
     "Ops >> Find the process whose port":
     {
@@ -510,7 +510,7 @@
         }
       ]
     },
-    "Dev >> My Projects >> Develop >> decova-gotcha":
+    "Dev >> My Projects >> Develop >> decova-Ops >> Gotcha >>":
     {
       "Steps": [
         {
