@@ -115,7 +115,7 @@
         }
       ]
     },
-    "Ops >> Docker >> Export image to tar file":
+    "Ops >> Docker >> Image >> Export image to tar file":
     {
       "Steps": [
         {
@@ -186,7 +186,7 @@
         }
       ]
     },
-    "Ops >> Docker >> List images #display#show":
+    "Ops >> Docker >> Image >> List images #display#show":
     {
       "Steps": [
         {
@@ -197,7 +197,7 @@
         }
       ]
     },
-    "Ops >> Docker >> Pull image":
+    "Ops >> Docker >> Image >> Pull image":
     {
       "Steps": [
         {
