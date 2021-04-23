@@ -705,6 +705,28 @@
           }
         }
       ]
+    },
+    "Ops >> Linux >> Download file #http#https":
+    {
+      "Steps": [
+        {
+          "Prompt": {
+            "QuestionComposer": "`File url?`",
+            "VarNameComposer": "fileUrl"
+          }
+        },
+        {
+          "Prompt": {
+            "QuestionComposer": "Local file path?",
+            "VarNameComposer": "localFilePath"
+          }
+        },
+        {
+          "Command": {
+            "CommandComposer": "`curl --output <localFilePath> <fileUrl>`"
+          }
+        }
+      ]
     }
   }
  
