@@ -695,6 +695,16 @@
           }
         }
       ]
+    },
+    "Ops >> Linux >> ODBC >> List locations of your unixODBC installation and configuration files #installed":
+    {
+      "Steps": [
+        {
+          "Command": {
+            "CommandComposer": "`odbcinst -j`"
+          }
+        }
+      ]
     }
   }
  
