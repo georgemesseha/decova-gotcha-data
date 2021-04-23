@@ -364,6 +364,7 @@
                 }
               },
               {
+                "RunOnlyIfComposer": "()=>`<addVolume>` == `1- Yes`",
                 "Command": {
                   "CommandComposer": "` -v \"<hostSharedDir>\":\"<containerDir>\"`"
                 }

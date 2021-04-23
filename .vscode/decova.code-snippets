@@ -8,6 +8,7 @@
             "    {\r",
             "        console.log('hello from mocha')\r",
             "    })\r",
+            
             "})"
         ],
         "description": "Generates a decribe snippet in TypeScript unit test spec file"
