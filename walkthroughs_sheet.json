@@ -727,6 +727,44 @@
           }
         }
       ]
+    },
+    "git >> Config >> Set account": {
+      "Steps": [
+        {
+          "Prompt": {
+            "QuestionComposer": "`git server user name?`",
+            "VarNameComposer": "`userName`"
+          }
+        },
+        {
+          "Prompt": {
+            "QuestionComposer": "git server email?",
+            "VarNameComposer": "`email`"
+          }
+        },
+        {
+          "Command": {
+            "CommandComposer": "git config --global user.name \\\"<userName>\\\"",
+            "SkipPrompt": true
+          }
+        },
+        {
+          "Command": {
+            "CommandComposer": "git config --global user.email \\\"<email>\\\"",
+            "SkipPrompt": true
+          }
+        }
+      ]
+    },
+    "git >> Config >> Show configuartion": {
+      "Steps": [
+        {
+          "Command": {
+            "SkipPrompt": true,
+            "CommandComposer": "`git config --list --show-origin`"
+          }
+        }
+      ]
     }
   }
  
