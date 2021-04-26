@@ -528,7 +528,7 @@
         {
           "Command": {
             "WillDoHintComposer": "`Will increment package's patch, then optionaly update dpenendent workspaces.`",
-            "CommandComposer": "`g patch++`" 
+            "CommandComposer": "`g patch++`"
           }
         }
       ]
@@ -749,6 +749,42 @@
         {
           "Command": {
             "CommandComposer": "`git config --list --show-origin`"
+          }
+        }
+      ]
+    },
+    "git >> Clone repo": {
+      "Steps": [
+        {
+          "Prompt": {
+            "QuestionComposer": "`Source repo?`",
+            "VarNameComposer": "srcRepo"
+          }
+        },
+        {
+          "Mcq": {
+            "QuestionComposer": "Clone to?",
+            "OptionsComposer": "[`0- Current directory`, `1- Other directory`]",
+            "VarNameComposer": "currentOrDir"
+          }
+        },
+        {
+          "RunOnlyIfComposer": "`<currentOrDir> == '1- Other directory'`",
+          "Prompt": {
+            "QuestionComposer": "Target dir?",
+            "VarNameComposer": "targetDir"
+          }
+        },
+        {
+          "RunOnlyIfComposer": "`<currentOrDir> == '1- Other directory'`",
+          "Command": {
+            "CommandComposer": "`git clone \\\"<srcRepo>\\\" \\\"<targetDir>\\\"`"
+          }
+        },
+        {
+          "RunOnlyIfComposer": "`<currentOrDir> == '0- Current directory'`",
+          "Command": {
+            "CommandComposer": "`git clone \\\"<srcRepo>\\\"`"
           }
         }
       ]
