@@ -533,17 +533,6 @@
         }
       ]
     },
-    "Ops >> Gotcha >> Edit my code snippets #augment":
-    {
-      "Steps": [
-        {
-          "Command": {
-            "WillDoHintComposer": "`Will guide you to edit Walkthroughs`",
-            "CommandComposer": "`g edit-snippets`"
-          }
-        }
-      ]
-    },
     "Ops >> Gotcha >> Local Tool >> Add a new LocalTool":
     {
       "Steps": [
