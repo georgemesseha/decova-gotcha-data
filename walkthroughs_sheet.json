@@ -750,8 +750,7 @@
         },
         {
           "Command": {
-            "CommandComposer": "`git config --global user.email \\\"<email>\\\"`",
-            "SkipPrompt": true
+            "CommandComposer": "`git config --global user.email \\\"<email>\\\"`"
           }
         }
       ]
@@ -760,7 +759,6 @@
       "Steps": [
         {
           "Command": {
-            "SkipPrompt": true,
             "CommandComposer": "`git config --list --show-origin`"
           }
         }
