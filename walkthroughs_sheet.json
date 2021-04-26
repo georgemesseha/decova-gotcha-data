@@ -738,19 +738,19 @@
         },
         {
           "Prompt": {
-            "QuestionComposer": "git server email?",
+            "QuestionComposer": "`git server email?`",
             "VarNameComposer": "`email`"
           }
         },
         {
           "Command": {
-            "CommandComposer": "git config --global user.name \\\"<userName>\\\"",
+            "CommandComposer": "`git config --global user.name \\\"<userName>\\\"`",
             "SkipPrompt": true
           }
         },
         {
           "Command": {
-            "CommandComposer": "git config --global user.email \\\"<email>\\\"",
+            "CommandComposer": "`git config --global user.email \\\"<email>\\\"`",
             "SkipPrompt": true
           }
         }
