@@ -758,33 +758,59 @@
         {
           "Prompt": {
             "QuestionComposer": "`Source repo?`",
-            "VarNameComposer": "srcRepo"
+            "VarNameComposer": "`srcRepo`"
           }
         },
         {
           "Mcq": {
-            "QuestionComposer": "Clone to?",
+            "QuestionComposer": "`Clone to?`",
             "OptionsComposer": "[`0- Current directory`, `1- Other directory`]",
-            "VarNameComposer": "currentOrDir"
+            "VarNameComposer": "`currentOrDir`"
           }
         },
         {
-          "RunOnlyIfComposer": "`<currentOrDir> == '1- Other directory'`",
+          "RunOnlyIfComposer": "()=>'<currentOrDir>' == '0- Current directory'",
+          "Command": {
+            "CommandComposer": "`git clone \\\"<srcRepo>\\\"`"
+          }
+        },
+        {
+          "RunOnlyIfComposer": "()=>'<currentOrDir>' == '1- Other directory'",
           "Prompt": {
-            "QuestionComposer": "Target dir?",
-            "VarNameComposer": "targetDir"
+            "QuestionComposer": "`Target dir?`",
+            "VarNameComposer": "`targetDir`"
           }
         },
         {
-          "RunOnlyIfComposer": "`<currentOrDir> == '1- Other directory'`",
+          "RunOnlyIfComposer": "()=>'<currentOrDir>' == '1- Other directory'",
           "Command": {
             "CommandComposer": "`git clone \\\"<srcRepo>\\\" \\\"<targetDir>\\\"`"
           }
+        }
+      ]
+    },
+    "git >> Track": {
+      "Steps": [
+        {
+          "Prompt": { 
+            "VarNameComposer": "`relativePaths`",
+            "QuestionComposer": "`File(s)/Dir(s) root relative path? (space separated)",
+            "Regex": ".+"
+          }
         },
         {
-          "RunOnlyIfComposer": "`<currentOrDir> == '0- Current directory'`",
           "Command": {
-            "CommandComposer": "`git clone \\\"<srcRepo>\\\"`"
+            "CommandComposer": "git add <relativePaths>"
+          }
+        }
+      ]
+    },
+    "git >> Show log": {
+      "Steps": [
+        {
+          "Command": {
+            "SkipPrompt": true,
+            "CommandComposer": "git log --graph --stat"
           }
         }
       ]
