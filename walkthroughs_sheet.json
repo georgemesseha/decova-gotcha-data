@@ -789,7 +789,7 @@
         }
       ]
     },
-    "git >> Track": {
+    "git >> Track ...": {
       "Steps": [
         {
           "Prompt": { 
