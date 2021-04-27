@@ -810,7 +810,7 @@
         {
           "Command": {
             "SkipPrompt": true,
-            "CommandComposer": "git log --graph --stat"
+            "CommandComposer": "`git log --graph --stat`"
           }
         }
       ]
