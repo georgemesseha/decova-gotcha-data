@@ -618,7 +618,7 @@
       "Steps": [
         {
           "Instruction": {
-            "InstructionComposer": "`mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \"test/**/*.spec.ts\"`"
+            "InstructionComposer": "`mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \"spec/**/*.spec.ts\"`"
           }
         }
       ]
@@ -670,7 +670,8 @@
         },
         {
           "Command": {
-            "CommandComposer": ""
+            "CommandComposer": "`g copy-vscode-file`",
+            "WillDoHintComposer": "Will run g copy-vscode-file. Just select launch.json to update you with Mocha Debugging capability"
           }
         }
       ]
