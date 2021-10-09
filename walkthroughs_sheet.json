@@ -815,6 +815,15 @@
           }
         }
       ]
+    },
+    "templates >> Open my templates folder to edit" : {
+      "Steps": [
+        {
+          "Command": {
+            "CommandComposer": "`%userprofile%\\gotcha`"
+          }
+        }
+      ]
     }
   }
  
