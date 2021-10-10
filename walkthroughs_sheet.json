@@ -820,7 +820,7 @@
       "Steps": [
         {
           "Command": {
-            "CommandComposer": "`%userprofile%\\gotcha`"
+            "CommandComposer": "`%userprofile%\\\\decova-gotcha-data`"
           }
         }
       ]
