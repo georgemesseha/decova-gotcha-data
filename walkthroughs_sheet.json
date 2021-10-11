@@ -671,7 +671,7 @@
         {
           "Command": {
             "CommandComposer": "`g copy-vscode-file`",
-            "WillDoHintComposer": "Will run g copy-vscode-file. Just select launch.json to update you with Mocha Debugging capability"
+            "WillDoHintComposer": "`Will run g copy-vscode-file. Just select launch.json to update you with Mocha Debugging capability`"
           }
         }
       ]
