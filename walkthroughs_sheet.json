@@ -795,7 +795,7 @@
         {
           "Prompt": { 
             "VarNameComposer": "`relativePaths`",
-            "QuestionComposer": "`File(s)/Dir(s) root relative path? (space separated)",
+            "QuestionComposer": "`File(s)/Dir(s) root relative path? (space separated)`",
             "Regex": ".+"
           }
         },
