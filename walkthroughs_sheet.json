@@ -816,7 +816,7 @@
         }
       ]
     },
-    "templates >> Open my templates folder to edit" : {
+    "Gotcha >> Templates >> Open my templates folder to edit" : {
       "Steps": [
         {
           "Command": {
