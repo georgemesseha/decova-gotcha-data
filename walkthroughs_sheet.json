@@ -639,7 +639,7 @@
         },
         {
           "Instruction": {
-            "InstructionComposer": "`mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \\\"test/**/*.spec.ts\\\"`"
+            "InstructionComposer": "`mocha --check-leaks -r tsconfig-paths/register -r ts-node/register test/**/*.spec.ts`"
           }
         },
         {
