@@ -801,7 +801,7 @@
         },
         {
           "Command": {
-            "CommandComposer": "git add <relativePaths>"
+            "CommandComposer": "`git add <relativePaths>`"
           }
         }
       ]
@@ -820,7 +820,7 @@
       "Steps": [
         {
           "Command": {
-            "CommandComposer": "`%userprofile%\\\\decova-gotcha-data`"
+            "CommandComposer": "`code %userprofile%\\\\decova-gotcha-data`"
           }
         }
       ]
