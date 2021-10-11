@@ -76,5 +76,13 @@
             "})",
             "});",
         ]
+    }, 
+    "ion-react-icons-import": {
+        "prefix": "ion-react-icons-import",
+        "body": [
+            "import { calculatorOutline, refreshOutline } from \"ionicons/icons\";"
+        ],
+        "description": "Adding icons to elements with intellisence in the great ion-react"
     }
+    
 }
