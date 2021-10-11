@@ -12,7 +12,6 @@
             "Regex": "^[0-9]{2,}$"
           },
           "RunOnlyIfComposer": ""
-
         },
         {
           "Command": {
@@ -821,6 +820,22 @@
         {
           "Command": {
             "CommandComposer": "`code %userprofile%\\\\decova-gotcha-data`"
+          }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "`REMINDER: After editing use your external tool to commit and push the changes!`"
+          }
+        }
+      ]
+    },
+    "Ionic >> Get your machine ready": {
+      "Shortcut": "ionic",
+      "Steps": [
+        {
+          "Command": {
+            "WillDoHintComposer": "`Will install Ionic cli globally on your machine`",
+            "CommandComposer": "`npm install -g @ionic/cli`"
           }
         }
       ]
