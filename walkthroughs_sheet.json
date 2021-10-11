@@ -839,6 +839,17 @@
           }
         }
       ]
+    },
+    "Ionic >> Create a new project": {
+      "Shortcut": "ionic-new",
+      "Steps": [
+        {
+          "Command": {
+            "WillDoHintComposer": "`Will walk you in the steps of creating a new ionic project`",
+            "CommandComposer": "`ionic start`"
+          }
+        }
+      ]
     }
   }
  
