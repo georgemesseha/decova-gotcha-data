@@ -5,9 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Debug Ionic",
+            "url": "http://localhost:8100",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
             "type": "node",
             "request": "launch",
-            "name": "Mocha All",
+            "name": "Mocha Debug All",
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
             "args": [
                 "-r",
@@ -22,7 +29,7 @@
             "protocol": "inspector"
         },
         {
-            "name": "Attach by Process ID",
+            "name": "Attach to ...",
             "processId": "${command:PickProcess}",
             "request": "attach",
             "skipFiles": [
@@ -34,7 +41,7 @@
         {
             "type": "pwa-node",
             "request": "launch",
-            "name": "Debug",
+            "name": "Debug entry file",
             
             "skipFiles": [
                 "<node_internals>/**"
