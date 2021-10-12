@@ -47,7 +47,7 @@
         {
           "Command": {
             "CommandComposer": "`g patch++`",
-            "WillDoHintComposer": "`Will increment the version's path no. of the current workspace's package.json`"
+            "WillDoHintComposer": "`Will increment the version's patch no. of the current workspace's package.json`"
           }
         },
         {
