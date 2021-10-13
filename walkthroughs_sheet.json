@@ -850,6 +850,16 @@
           }
         }
       ]
+    },
+    "Ops >> Disk >> Get bitlocker status of all drives #encription": {
+      "Steps": [
+        {
+          "Command": {
+            "CommandComposer": "`manage-bde -status`",
+            "WillDoHintComposer": "`Will display the bitlocker status of all disk drives`"
+          }
+        }
+      ]
     }
   }
  
