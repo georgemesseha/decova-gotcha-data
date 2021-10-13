@@ -31,6 +31,38 @@
 				"clear": false
 			},
 			"problemMatcher": []
+		},
+		{
+			"type": "shell",
+			"group": "build",
+			"label": "install latest ts-voltage",
+			"command": "npm i ts-voltage@latest",
+			
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"type": "shell",
+			"group": "build",
+			"label": "start",
+			"command": "npm start",
+			
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": []
 		}
 	]
 }
