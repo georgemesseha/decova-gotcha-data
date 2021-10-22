@@ -5,16 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug Ionic",
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Debug Ionic",
             "url": "http://localhost:8100",
             "webRoot": "${workspaceFolder}"
         },
         {
+            "name": "Mocha Debug All",
             "type": "node",
             "request": "launch",
-            "name": "Mocha Debug All",
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
             "args": [
                 "-r",
@@ -37,7 +37,6 @@
             ],
             "type": "pwa-node"
         },
-
         {
             "type": "pwa-node",
             "request": "launch",
@@ -51,6 +50,15 @@
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ]
-        }
+        },
+        {
+            "name": "Debug Extension",
+            "request": "launch",
+            "type": "extensionHost",
+            "runtimeExecutable": "${execPath}",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}"
+            ]
+          }
     ]
 }

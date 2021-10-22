@@ -2,9 +2,9 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "Build & Run",
 			"type": "shell",
 			"group": "build",
-			"label": "Build & Run",
 			"command": "npm install & tsc & node ./dist/app.js ++",
 			"presentation": {
 				"echo": true,
@@ -17,9 +17,9 @@
 			"problemMatcher": []
 		},
 		{
+			"label": "Build & Publish",
 			"type": "shell",
 			"group": "build",
-			"label": "Build & Publish",
 			"command": "npm install & tsc & ggg ++ & npm publish",
 			
 			"presentation": {
@@ -33,9 +33,9 @@
 			"problemMatcher": []
 		},
 		{
+			"label": "install latest ts-voltage",
 			"type": "shell",
 			"group": "build",
-			"label": "install latest ts-voltage",
 			"command": "npm i ts-voltage@latest",
 			
 			"presentation": {
@@ -50,8 +50,8 @@
 		},
 		{
 			"type": "shell",
-			"group": "build",
 			"label": "start",
+			"group": "build",
 			"command": "npm start",
 			
 			"presentation": {
