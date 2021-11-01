@@ -101,6 +101,35 @@
             ""
         ],
         "description": "It will create a singleton circuit code snippet"
+    },
+    "voltage-create-new-UIComponent": {
+        "prefix": "voltage-new-UIComponent",
+        "body": [
+            "import { UIComponent } from \"decova-voltage\";\r",
+            "import { UserProfilePageCircuit } from \"../../voltage-app/UserProfilePageCircuit\";\r",
+            "\r",
+            "export default class UserProfilePage extends UIComponent<UserProfilePageCircuit> {\r",
+            "    protected RenderContent()\r",
+            "    {\r",
+            "        return 'test';\r",
+            "    }\r",
+            "    \r",
+            "}\r",
+            "\r",
+            "// move this to circuits folder\r",
+            "export class UserProfilePageCircuit extends SingletonCircuit\r",
+            "{\r",
+            "    OnGlobalClearance(globalDisturbance: IGlobalDisturbance): void\r",
+            "    {\r",
+            "    }\r",
+            "    OnLocalClearance(localDisturbance: ILocalDisturbance): void\r",
+            "    {\r",
+            "    }\r",
+            "}\r",
+            "\r",
+            ""
+        ],
+        "description": "Creates the new UIComponent code along with its circuit"
     }
     
     
