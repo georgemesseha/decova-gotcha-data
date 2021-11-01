@@ -83,6 +83,25 @@
             "import { calculatorOutline, refreshOutline } from \"ionicons/icons\";"
         ],
         "description": "Adding icons to elements with intellisence in the great ion-react"
+    },
+    "Create Singleton Circuit": {
+        "prefix": "voltage-create-singleton-circuit",
+        "body": [
+            "import { IGlobalDisturbance, ILocalDisturbance, SingletonCircuit } from \"decova-voltage\";\r",
+            "\r",
+            "export class RouterCircuit extends SingletonCircuit\r",
+            "{\r",
+            "    OnGlobalClearance(globalDisturbance: IGlobalDisturbance): void\r",
+            "    {\r",
+            "    }\r",
+            "    OnLocalClearance(localDisturbance: ILocalDisturbance): void\r",
+            "    {\r",
+            "    }\r",
+            "}\r",
+            ""
+        ],
+        "description": "It will create a singleton circuit code snippet"
     }
+    
     
 }
