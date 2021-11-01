@@ -117,6 +117,7 @@
             "}\r",
             "\r",
             "// move this to circuits folder\r",
+            "import { SingletonCircuit, IGlobalDisturbance, ILocalDisturbance } from 'decova-voltage';\r\r",
             "export class UserProfilePageCircuit extends SingletonCircuit\r",
             "{\r",
             "    OnGlobalClearance(globalDisturbance: IGlobalDisturbance): void\r",
