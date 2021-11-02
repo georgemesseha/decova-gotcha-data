@@ -100,7 +100,7 @@
     "voltage-page": {
         "prefix": "voltage-page",
         "body": [
-            "import { UIComponent, {2:Singleton_or_Transient}Circuit } from 'decova-voltage';\r",
+            "import { UIComponent, {2:SingletonOrTransient}Circuit } from 'decova-voltage';\r",
             "",
             "export default class ${1:PageName}Page extends UIComponent<${1:PageName}PageCircuit>\r",
             "{\r",
@@ -113,7 +113,7 @@
             "\r",
             "// move this to circuits folder\r",
             
-            "export class ${1:PageName}PageCircuit extends {2:Singleton_or_Transient}Circuit\r",
+            "export class ${1:PageName}PageCircuit extends {2:SingletonOrTransient}Circuit\r",
             "{\r\r",
             "   $0",
             "}\r",
