@@ -131,7 +131,7 @@
             "{\r",
             "    protected RenderContent()\r",
             "    {\r",
-            "        return '<h1>{1:ComponentName}</h1>';\r",
+            "        return <h1>{1:ComponentName}</h1>;\r",
             "    }\r",
             "    \r",
             "}\r",
