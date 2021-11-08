@@ -860,6 +860,15 @@
           }
         }
       ]
+    },
+    "Display folder content": {
+      "Steps": [
+        {
+          "Command": {
+            "CommandComposer": "`dir`"
+          }
+        }
+      ]
     }
   }
  

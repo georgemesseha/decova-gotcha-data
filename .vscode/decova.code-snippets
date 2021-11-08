@@ -85,7 +85,7 @@
         "description": "Adding icons to elements with intellisence in the great ion-react"
     },
     "Create Singleton Circuit": {
-        "prefix": "voltage-singleton-circuit",
+        "prefix": "vol Singleton Circuit",
         "body": [
             "import { SingletonCircuit } from \"decova-voltage\";\r",
             "\r",
@@ -95,57 +95,82 @@
             "}\r",
             ""
         ],
-        "description": "It will create a singleton circuit code snippet"
+        "description": "Generates a singleton circuit code snippet"
+    },
+    "Create Transient Circuit": {
+        "prefix": "vol Transient Circuit",
+        "body": [
+            "import { TransientCircuit } from \"decova-voltage\";\r",
+            "\r",
+            "export class {1:CircuitName}Circuit extends TransientCircuit\r",
+            "{\r",
+            "   {0}",
+            "}\r",
+            ""
+        ],
+        "description": "Generates a Transient circuit code snippet"
+    },
+    "Create Entity Circuit": {
+        "prefix": "vol Entity Circuit",
+        "body": [
+            "import { EntityCircuit } from \"decova-voltage\";\r",
+            "\r",
+            "export class {1:CircuitName}Circuit extends EntityCircuit\r",
+            "{\r",
+            "   {0}",
+            "}\r",
+            ""
+        ],
+        "description": "Generates an Entity circuit code snippet"
     },
     "voltage-page": {
-        "prefix": "voltage-page",
+        "prefix": "vol Page",
         "body": [
-            "import { UIComponent, {2:SingletonOrTransient}Circuit } from 'decova-voltage';\r",
+            "import { UIComponent, ${2:Singleton_or_Transient}Circuit } from 'decova-voltage';\r",
             "",
             "export default class ${1:PageName}Page extends UIComponent<${1:PageName}PageCircuit>\r",
             "{\r",
             "    protected RenderContent()\r",
             "    {\r",
-            "        return '<h1>{1:PageName}</h1>';\r",
+            "        return '<h1>${1:PageName}</h1>';\r",
             "    }\r",
             "    \r",
             "}\r",
             "\r",
             "// move this to circuits folder\r",
             
-            "export class ${1:PageName}PageCircuit extends {2:SingletonOrTransient}Circuit\r",
+            "export class ${1:PageName}PageCircuit extends ${2:Singleton_or_Transient}Circuit\r",
             "{\r\r",
             "   $0",
             "}\r",
             "\r",
             ""
         ],
-        "description": "Creates the new UIComponent code along with its circuit"
+        "description": "Generates a Page code along with its circuit"
     },
     "voltage-component": {
-        "prefix": "voltage-component",
+        "prefix": "vol Component",
         "body": [
-            "import { UIComponent, SingletonCircuit } from 'decova-voltage';\r\r",
-
+            "import { UIComponent, ${2:Singleton_or_Transient}Circuit } from 'decova-voltage';\r",
+            "",
             "export default class ${1:ComponentName} extends UIComponent<${1:ComponentName}Circuit>\r",
             "{\r",
             "    protected RenderContent()\r",
             "    {\r",
-            "        return <h1>{1:ComponentName}</h1>;\r",
+            "        return '<h1>${1:ComponentName}</h1>';\r",
             "    }\r",
             "    \r",
             "}\r",
             "\r",
             "// move this to circuits folder\r",
             
-            "export class ${1:ComponentName}Circuit extends SingletonCircuit\r",
+            "export class ${1:ComponentName}Circuit extends ${2:Singleton_or_Transient}Circuit\r",
             "{\r\r",
             "   $0",
             "}\r",
             "\r",
             ""
         ],
-        "description": "Creates the new UIComponent code along with its circuit"
+        "description": "Generates a UIComponent code along with its circuit"
     }
-    
 }
