@@ -884,6 +884,11 @@
           "Command": {
             "CommandComposer": "`dotnet dev-certs https -ep $env:USERPROFILE\\.aspnet\\https\\<certName>.pfx -p <password>`"
           }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "`Find it .pfx file @dir %USERPROFILE%/.aspnet/https/ `"
+          }
         }
       ]
     }
