@@ -886,8 +886,9 @@
           }
         },
         {
-          "Instruction": {
-            "InstructionComposer": "`Find it .pfx file @dir %USERPROFILE%/.aspnet/https/ `"
+          "Command": {
+            "WillDoHintComposer": "Will open the directory contains your .pfx file",
+            "CommandComposer": "`start %USERPROFILE%/.aspnet/https/`"
           }
         }
       ]
