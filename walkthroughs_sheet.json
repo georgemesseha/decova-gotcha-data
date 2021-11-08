@@ -882,7 +882,7 @@
         },
         {
           "Command": {
-            "CommandComposer": "`dotnet dev-certs https -ep $env:USERPROFILE\\.aspnet\\https\\<certName>.pfx -p <password>`"
+            "CommandComposer": "`dotnet dev-certs https -ep $env:\"USERPROFILE\\.aspnet\\https\\<certName>.pfx\" -p <password>`"
           }
         },
         {
