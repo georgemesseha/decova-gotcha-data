@@ -861,11 +861,28 @@
         }
       ]
     },
-    "Display folder content": {
+    "Ops >> SSL >> Create https dev certificate": {
       "Steps": [
         {
+          "Instruction": {
+            "InstructionComposer": "`!!! I think this should be done with administrator priviledge`"
+          }
+        },
+        {
+          "Prompt": {
+            "QuestionComposer": "`Certificate name (The same as the main .net assembly and case sensitive)`",
+            "VarNameComposer": "`certName`"
+          }
+        },
+        {
+          "Prompt": {
+            "QuestionComposer": "`Password`",
+            "VarNameComposer": "`password`"
+          }
+        },
+        {
           "Command": {
-            "CommandComposer": "`dir`"
+            "CommandComposer": "`dotnet dev-certs https -ep $env:USERPROFILE\\.aspnet\\https\\<certName>.pfx -p <password>`"
           }
         }
       ]
