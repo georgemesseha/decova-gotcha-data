@@ -900,7 +900,7 @@
         {
           "Command": {
             "CommandComposer": "`g create_dev_https_cert`",
-            "WillDoHintComposer": "Will guide you through creating the dev cert at the host machine."
+            "WillDoHintComposer": "`Will guide you through creating the dev cert at the host machine.`"
           }
         }
         
