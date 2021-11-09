@@ -883,7 +883,7 @@
         },
         {
           "Command": {
-            "CommandComposer": "`dotnet dev-certs https -ep $env:\"USERPROFILE\\\\.aspnet\\\\https\\\\<certName>.pfx\" -p <password>`"
+            "CommandComposer": "`dotnet dev-certs https -ep $env:\"USERPROFILE\\\\.aspnet\\\\https\\\\<certName>.pfx\" -p <password> --trust`"
           }
         },
         {
@@ -902,11 +902,16 @@
             "CommandComposer": "`g create_dev_https_cert`",
             "WillDoHintComposer": "Will guide you through creating the dev cert at the host machine."
           }
-        },
+        }
+        
+      ]
+    },
+    "Ops >> Network >> Open Hosts file location":
+    {
+      "Steps": [
         {
           "Command": {
-            "CommandComposer": "`dev-certs https --trust`",
-            "WillDoHintComposer": "`Will run a command to trust dev certs`"
+            "CommandComposer": "`start C:\\\\Windows\\\\System32\\\\drivers\\\\etc`"
           }
         }
       ]
