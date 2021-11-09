@@ -888,7 +888,7 @@
         },
         {
           "Command": {
-            "WillDoHintComposer": "Will open the directory contains your .pfx file",
+            "WillDoHintComposer": "`Will open the directory contains your .pfx file`",
             "CommandComposer": "`start %USERPROFILE%/.aspnet/https/`"
           }
         }
