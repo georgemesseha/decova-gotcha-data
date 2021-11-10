@@ -1,976 +1,271 @@
 {
-    "$schema": "https://raw.githubusercontent.com/georgemesseha/decova-gotcha-data/master/walkthroughs_schema.json",
-    "Walkthroughs": {
-      "Ops >> Find the process whose port":
-      {
-        
-        "Steps": [
-          {
-            "Prompt": {
-              "QuestionComposer": "'Port #'",
-              "VarNameComposer": "'port'",
-              "Regex": "^[0-9]{2,}$"
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/georgemesseha/decova-gotcha-data/master/walkthroughs_schema.json",
+    "title": "decova-gotcha-walkthroughs-schema",
+    "description": "Describes the Gotcha Walkthroughs Schema",
+    "definitions": {
+        "SCH_Command": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "WillDoHintComposer": {
+                    "type": "string"
+                },
+                "CommandComposer": {
+                    "type": "string"
+                },
+                "SkipPrompt": {
+                    "type": "boolean"
+                }
             },
-            "RunOnlyIfComposer": ""
-          },
-          {
-            "Command": {
-              "WillDoHintComposer": "'Will find the ID of the process using a specific port.'",
-              "CommandComposer": "()=> `netstat -ano | findstr :<port>`"
+            "required": [
+                "CommandComposer"
+            ]
+        },
+        "SCH_Mcq": {
+            "additionalProperties": false,
+            "properties": {
+                "QuestionComposer": {
+                    "type": "string",
+                    "description": "The prompt question"
+                },
+                "VarNameComposer": {
+                    "type": "string",
+                    "description": "Resembles the name of the variable will carry the user input."
+                },
+                "OptionsComposer": {
+                    "type": "string",
+                    "description": "JavaScript expression to be evaluated to an array of strings to be displayed as options."
+                }
+            },
+            "required": [
+                "QuestionComposer",
+                "VarNameComposer",
+                "OptionsComposer"
+            ]
+        },
+        "SCH_Prompt": {
+            "additionalProperties": false,
+            "properties": {
+                "QuestionComposer": {
+                    "type": "string",
+                    "description": "The prompt question"
+                },
+                "VarNameComposer": {
+                    "type": "string",
+                    "description": "Resembles the name of the variable will carry the user input."
+                },
+                "Regex": {
+                    "type": "string",
+                    "description": "Applicable only if the step is Prompt/*. It validate the GMate user answer against the regular expression."
+                }
+            },
+            "required": [
+                "VarNameComposer",
+                "QuestionComposer"
+            ]
+        },
+        "SCH_Instruction": {
+            "additionalProperties": false,
+            "properties": {
+                "InstructionComposer": {
+                    "type": "string",
+                    "description": "The expression used to generate the instruction."
+                }
             }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "'Pick a PID from the above list'",
-              "VarNameComposer": "'pid'",
-              "Regex": "[0-9]+"
+        },
+        "SCH_Repeater": {
+            "additionalProperties": false,
+            "properties": {
+                "IterationSteps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SCH_Step"
+                    }
+                },
+                "WillDoHintComposer": {
+                    "type": "string"
+                },
+                "SkipPrompt": {
+                    "type": "boolean"
+                },
+                "DoRepeatQuestionComposer": {
+                    "type": "string"
+                }
+            },
+            "required": ["DoRepeatQuestionComposer", "IterationSteps"]
+        },
+        "SCH_Aggregator": {
+            "properties": {
+                "Steps": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/SCH_Step" }
+                },
+                "OutputVarName": {
+                    "type": "string"
+                }
             }
-          },
-          {
-            "Command": {
-              "WillDoHintComposer": "`Will display info about the process whose PID = <pid>`",
-              "CommandComposer": "`tasklist /svc /FI \"PID eq <pid>\"`"
+        },
+        "SCH_If": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+                "Expression": {
+                    "type": "string",
+                    "description": "The expression to check"
+                },
+                "Steps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SCH_Step"
+                    }
+                }
             }
-          }
-        ]
-      },
-      "Ops >> NodeJS >> build & patch++ & publish #increment#push":
-      {    
-        "Shortcut": "++",
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`tsc`",
-              "WillDoHintComposer": "`Will compile TypeScript`"
+        },
+        "SCH_While": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+                "ExpressionComposer": {
+                    "type": "string",
+                    "description": "The expression to check"
+                },
+                "Steps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SCH_Step"
+                    }
+                }
             }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`g patch++`",
-              "WillDoHintComposer": "`Will increment the version's patch no. of the current workspace's package.json`"
+        },
+        "SCH_SetVar": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+                "VarNameComposer": {
+                    "type": "string",
+                    "description": "The expression when evaluated you get the var name"
+                },
+                "EvaluationExpressionComposer": {
+                    "type": "string",
+                    "description": "The js string contains the code when evaluated as an expression that when evaluated it return the required value to set to the variable."
+                }
             }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`npm publish`",
-              "WillDoHintComposer": "`Will publish the currently being developed package to npm repo.`"
-            }
-          }
-        ]
-      },
-      "Ops >> vscode >> Writing Extension >> Pack your extension #vsce":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`tsc`",
-              "WillDoHintComposer": "`Will compile TypeScript`"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`g patch++`",
-              "WillDoHintComposer": "`Will increment the version's path no. of the current workspace's package.json`"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`vsce package`",
-              "WillDoHintComposer": "`Will package the extension locally as vsix`"
-            }
-          }
-        ]
-      },
-      "Dev >> npm >> List direct dependencies":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "WillDoHintComposer": "`Will list the direct dependencies of the currently developed package.`",
-              "CommandComposer": "`npm list --depth=0`"
-            }
-          }
-        ]
-      },
-      "Dev >> npm >> List globally installed packages":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "WillDoHintComposer": "`Will list the globally installed packages.`",
-              "CommandComposer": "`npm list --global --depth=0`"
-            }
-          }
-        ]
-      },
-      "Ops >> Docker >> Container >> List running containers #list#show":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "WillDoHintComposer": "`Will list the running containers`",
-              "CommandComposer": "`docker ps`"
-            }
-          }
-        ]
-      },
-      "Ops >> Docker >> Image >> Export image to tar file":
-      {
-        "Steps": [
-          {
-            "Mcq": {
-              "QuestionComposer": "`List images to pick from?`",
-              "OptionsComposer": "['Yes', 'No']",
-              "VarNameComposer": "`listImages`"
-            }
-          },
-          {
-            "RunOnlyIfComposer": "()=> '<listImages>' == 'Yes'",
-            "Command": {
-              "SkipPrompt": true,
-              "WillDoHintComposer": "`Will list top level images in your local Docker repo`",
-              "CommandComposer": "`docker image ls`"
-            }
-          },
-          {
-            "Prompt": {
-              "VarNameComposer": "`imageName`",
-              "QuestionComposer": "`Image tag or ID?`",
-              "Regex": "^\\S{2,}$"
-            }
-          },
-          {
-            "Prompt": {
-              "VarNameComposer": "`outputFilePath`",
-              "QuestionComposer": "`Output file path (without extension)?`"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`docker image save <imageName> -o <outputFilePath>`",
-              "WillDoHintComposer": "`Will export image <imageName> to <outputFilePath>`"
-            }
-          }
-        ]
-      },
-      "Ops >> Docker >> Container >> Bash inside a running docker container #cmd#command#cli":
-      {
-        "Steps": [
-          {
-            "Mcq": {
-              "VarNameComposer": "`displayRunningContainers`",
-              "OptionsComposer": "['Yes', 'No']",
-              "QuestionComposer": "`List running containers?`"
-            }
-          },
-          {
-            "RunOnlyIfComposer": "()=> '<displayRunningContainers>' == 'Yes'",
-  
-            "Command": {
-              "WillDoHintComposer": "`Will display the running containers`",
-              "CommandComposer": "`docker ps`"
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`Container name?`",
-              "VarNameComposer": "`containerName`"
-            }
-          },
-          {
-            "Command": {
-              "WillDoHintComposer": "`Will let you bash inside [<containerName>] container`",
-              "CommandComposer": "`docker exec -u root -it <containerName> /bin/bash`"
-            }
-          }
-        ]
-      },
-      "Ops >> Docker >> Image >> List images #display#show":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`docker image ls`",
-              "WillDoHintComposer": "`Will list top level images`"
-            }
-          }
-        ]
-      },
-      "Ops >> Docker >> Image >> Pull image":
-      {
-        "Steps": [
-          {
-            "Mcq": {
-              "QuestionComposer": "`Pull all tags?`",
-              "VarNameComposer": "`pullAllTags`",
-              "OptionsComposer": "['Yes', 'No']"
-            }
-          },
-          {
-            "Mcq": {
-              "QuestionComposer": "`List images to pick from?`",
-              "VarNameComposer": "`listImages`",
-              "OptionsComposer": "['Yes', 'No']"
-            }
-          },
-          {
-            "RunOnlyIfComposer": "()=> '<listImages>' == 'Yes'",
-            "Command": {
-              "WillDoHintComposer": "`Will list top level docker images to pick from`",
-              "CommandComposer": "`docker image ls`",
-              "SkipPrompt": true
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`Image name?`",
-              "VarNameComposer": "`imageName`"
-            }
-          },
-          {
-            "Command": {
-              "WillDoHintComposer": "`Will pull image <imageName> to your local repo`",
-              "CommandComposer": "`docker pull <imageName>`"
-            }
-          }
-        ]
-      },
-      "Ops >> Docker >> Container >> List all running and stopped containers":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`docker container ls -a`",
-              "WillDoHintComposer": "`Will list all running and stopped containers in your local docker repo`"
-            }
-          }
-        ]
-      },
-      "Ops >> Docker >> Container >> Create new container":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`docker image ls`",
-              "WillDoHintComposer": "`Will list all local images to pick from`",
-              "SkipPrompt": true
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`Image Tag or ID?`",
-              "VarNameComposer": "`imageName`",
-              "Regex": "^\\S{2,}$"
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`Given contaienr tag?`",
-              "VarNameComposer": "`containerTag`",
-              "Regex": "^\\S{2,}$"
-            }
-          },
-          {
-            "Aggregator": {
-              "OutputVarName": "options",
-              "Steps": [
+        },
+        "SCH_Step": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+                "RunOnlyIfComposer": {
+                    "type": "string",
+                    "description": "A JS function that evaluates to boolean describes whether this step will run or not. Previous steps VarNames is typically used to author the function."
+                },
+                "Command": {
+                    "$ref": "#/definitions/SCH_Command"
+                },
+                "Instruction": {
+                    "$ref": "#/definitions/SCH_Instruction"
+                },
+                "Prompt": {
+                    "$ref": "#/definitions/SCH_Prompt"
+                },
+                "Repeater": {
+                    "$ref": "#/definitions/SCH_Repeater"
+                },
+                "Mcq": {
+                    "$ref": "#/definitions/SCH_Mcq"
+                },
+                "Aggregator": {
+                    "$ref": "#/definitions/SCH_Aggregator"
+                },
+                "If": 
                 {
-                  "Repeater": {
-                    "DoRepeatQuestionComposer": "Add port mapping?",
-                    "IterationSteps": [
-                      {
-                        "Prompt": {
-                          "VarNameComposer": "`portMapping`",
-                          "QuestionComposer": "`Port mapping`",
-                          "Regex": "^[0-9]+\\:[0-9]+$"
-                        }
-                      },
-                      {
-                        "Command": {
-                          "CommandComposer": "` -p <portMapping>`"
-                        }
-                      }
+                    "$ref": "#/definitions/SCH_If"
+                },
+                "While": {
+                    "$ref": "#/definitions/SCH_While"
+                }
+            },
+            "oneOf": [
+                {
+                    "required": [
+                        "Command"
                     ]
-                  }
                 },
                 {
-                  "Mcq": {
-                    "QuestionComposer": "`Attach terminal?`",
-                    "OptionsComposer": "['1- Yes', '0- No']",
-                    "VarNameComposer": "`attached`"
-                  }
+                    "required": [
+                        "Instruction"
+                    ]
                 },
                 {
-                  "Command": {
-                    "CommandComposer": "()=>`<attached>` == '1- Yes'? ' -it' : ''"
-                  }
+                    "required": [
+                        "Prompt"
+                    ]
                 },
                 {
-                  "Mcq": {
-                    "QuestionComposer": "`Read only container?`",
-                    "OptionsComposer": "['1- Yes', '0- No']",
-                    "VarNameComposer": "`readonly`"
-                  }
+                    "required": [
+                        "Repeater"
+                    ]
                 },
                 {
-                  "Command": {
-                    "CommandComposer": "()=>`<readonly>` == '1- Yes'? ' --read-only' : ''"
-                  }
+                    "required": [
+                        "Mcq"
+                    ]
                 },
                 {
-                  "Mcq": {
-                    "QuestionComposer": "`Auto remove on exit?`",
-                    "OptionsComposer": "['1- Yes', '0- No']",
-                    "VarNameComposer": "`autoRemove`"
-                  }
+                    "required": [
+                        "Aggregator"
+                    ]
                 },
                 {
-                  "Command": {
-                    "CommandComposer": "()=>`<autoRemove>` == '1- Yes'? ' --rm' : ''"
-                  }
+                    "required": [
+                        "If"
+                    ]
                 },
                 {
-                  "Mcq": {
-                    "QuestionComposer": "`Restart Policy?`",
-                    "OptionsComposer": "['Always', 'Never', 'On failure', 'Unless Eplicitly Stopped']",
-                    "VarNameComposer": "`restartPolicy`"
-                  }
-                },
-                {
-                  "Command": {
-                    "CommandComposer": "()=>{ switch(`<restartPolicy>`) { case `Always`: return ` --restart always`; case `Never`: return ` --restart no`; case `On failure`: return ` --restart on-failure`; case `Unless Eplicitly Stopped`: return ` --restart unless-stopped`; }}"
-                  }
-                },
-                {
-                  "Mcq": {
-                    "QuestionComposer": "`Add volume?`",
-                    "OptionsComposer": "['1- Yes', '0- No']",
-                    "VarNameComposer": "`addVolume`"
-                  }
-                },
-                {
-                  "RunOnlyIfComposer": "()=>`<addVolume>` == `1- Yes`",
-                  "Prompt": {
-                    "QuestionComposer": "`Host shared dir?`",
-                    "VarNameComposer": "`hostSharedDir`"
-                  }
-                },
-                {
-                  "RunOnlyIfComposer": "()=>`<addVolume>` == `1- Yes`",
-                  "Prompt": {
-                    "QuestionComposer": "`Corresponding contaienr dir?`",
-                    "VarNameComposer": "`containerDir`"
-                  }
-                },
-                {
-                  "RunOnlyIfComposer": "()=>`<addVolume>` == `1- Yes`",
-                  "Command": {
-                    "CommandComposer": "` -v \"<hostSharedDir>\":\"<containerDir>\"`"
-                  }
+                    "required": [
+                        "While"
+                    ]
                 }
-              ]
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`docker run <options> <imageName> `"
-            }
-          }
-          
-        ]
-      },
-      "Ops >> Docker >> Container >> Display port mappings":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`docker ps`",
-              "WillDoHintComposer": "`Will list the running container`",
-              "SkipPrompt": true
-            }
-          },
-          {
-            "Prompt": {
-              "VarNameComposer": "`containerTag`",
-              "QuestionComposer": "`Container tag?`",
-              "Regex": "^\\S{2,}$"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`docker port <containerTag>`",
-              "WillDoHintComposer": "`docker port <containerTag>`"
-            }
-          }
-        ]
-      },
-      "Ops >> Docker >> Container >> Copy a file/folder (Host --> Container)":
-      {
-        "Steps": [
-          {
-            "Mcq": {
-              "QuestionComposer": "`List running containers?`",
-              "VarNameComposer": "`displayRunningContainers`",
-              "OptionsComposer": "['Yes', 'No']"
-            }
-          },
-          {
-            "RunOnlyIfComposer": "()=> '<displayRunningContainers>' == 'Yes'",
-            "Command": {
-              "CommandComposer": "`docker ps`",
-              "WillDoHintComposer": "`Will display the running containers`"
-            }
-          },
-          {
-            "Prompt": {
-              "VarNameComposer": "`containerName`",
-              "QuestionComposer": "`Container name?`",
-              "Regex": "^\\S{2,}$"
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`Source file/directory path on host?`",
-              "VarNameComposer": "`srcPath`",
-              "Regex": "^\\S{4,}$"
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`Destination path inside the container?`",
-              "VarNameComposer": "`dstPath`",
-              "Regex": "^\\S{4,}$"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`docker cp <srcPath> <containerName>:<dstPath>`",
-              "WillDoHintComposer": "`Will copy the source File/Directory from you host to the container`"
-            }
-          }
-        ]
-      },
-      "Ops >> Docker >> Container >> Copy a file/folder (Container --> Host)":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "()=> '<displayRunningContainers>' == 'Yes'",
-              "WillDoHintComposer": "`Will display the running containers`"
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`Container name?`",
-              "VarNameComposer": "`containerName`",
-              "Regex": "^\\S{2,}$"
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`Source file/directory path on host?`",
-              "VarNameComposer": "`srcPath`",
-              "Regex": "^\\S{4,}$"
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`Destination path inside the container?`",
-              "VarNameComposer": "`dstPath`",
-              "Regex": "^\\S{4,}$"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`docker cp <containerName>:<srcPath> <dstPath>`",
-              "WillDoHintComposer": "`Will copy the source File/Directory from the container to your host machine`"
-            }
-          }
-        ]
-      },
-      "Dev >> npm >> Find unused and missing dependencies/packages":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`depcheck`",
-              "WillDoHintComposer": "`Will find the unused and missing dependencies/packages`"
-            }
-          }
-        ]
-      },
-      "Poyka >> Open old poyka browsing mechanism":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`g open-old-poyka`",
-              "WillDoHintComposer": "`g >> Old Poyka >> Open #legacy`"
-            }
-          }
-        ]
-      },
-      "Dev >> My Projects >> Develop >> decova-Ops >> Gotcha >>":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`code G:/_MyProjects/_MyNodeProjects/decova-gotcha`",
-              "WillDoHintComposer": "`Will open Gtch workspace for you to develop`"
-            }
-          }
-        ]
-      },
-      "Ops >> Node >> Workspace >> Increment patch and update dependent workspaces #patch++":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "WillDoHintComposer": "`Will increment package's patch, then optionaly update dpenendent workspaces.`",
-              "CommandComposer": "`g patch++`"
-            }
-          }
-        ]
-      },
-      "Ops >> Gotcha >> Local Tool >> Add a new LocalTool":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "WillDoHintComposer": "`Will open decova-gotcha workspace in VSCode`",
-              "CommandComposer": "`code G:/_MyProjects/_MyNodeProjects/decova-gotcha`"
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`Tool name?`",
-              "VarNameComposer": "`toolName`",
-              "Regex": "^[A-z_]+$"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`[ Ctrl P / LTool_ ] then create [ LTool_<toolName>.ts ] there`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`class LTool_<toolName> implements ILocalTool {}`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`Ctrl P / App.ts`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`Ctrl F / RegisterLocalTools`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`Add [ new LTool_<toolName>(), ]`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`Now your tool is able to be launched by g ${shortcut} and will be listed automatically in Gotcha commands`"
-            }
-          }
-        ]
-      },
-      "Dev >> Snippets >> Create a new code snippet":
-      {
-        "Steps": [
-          {
-            "Instruction": {
-              "InstructionComposer": "`Select some code in VSCode`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`Ctrl Shift P >> Convert to snippet`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`Copy your snippet from the Output window`"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`g edit-snippets`",
-              "WillDoHintComposer": "`You will be led to edit your global snippets`"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`g copy-vscode-file decova.code-snippets`",
-              "WillDoHintComposer": "`Will update current workspace with the new decova.code-snippets`"
-            }
-          }
-        ]
-      },
-      "Dev >> NodeJS >> Unit Test >> package.json >> Generate script >> Test with mocha":
-      {
-        "Steps": [
-          {
-            "Instruction": {
-              "InstructionComposer": "`mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \"spec/**/*.spec.ts\"`"
-            }
-          }
-        ]
-      },
-      "Dev >> NodeJS >> Unit Test >> Setup mocha in your project":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`npm i -D mocha chai typescript nodemon supertest ts-node tsconfig-paths @types/node @types/chai @types/mocha @types/supertest`",
-              "WillDoHintComposer": "`Will install the required packages to get started with mocha`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`Add the following script in package.json`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`mocha --check-leaks -r tsconfig-paths/register -r ts-node/register test/**/*.spec.ts`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`Add 'test' folder to your workspace`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`Create the first test file as some-name.spec.ts then start with the next code`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`import { expect } from 'chai'`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`describe('description', ()=>{ it('description', ()=>{ console.log('hello from mocha')})})`"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`npm test`",
-              "WillDoHintComposer": "`Will test that it's working`"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`g copy-vscode-file`",
-              "WillDoHintComposer": "`Will run g copy-vscode-file. Just select launch.json to update you with Mocha Debugging capability`"
-            }
-          }
-        ]
-      },
-      "Ops >> Linux >> Centos >> yum >> List installed packages":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`yum list --installed`"
-            }
-          }
-        ]
-      },
-      "Ops >> Linux >> ODBC >> List locations of your unixODBC installation and configuration files #installed":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`odbcinst -j`"
-            }
-          }
-        ]
-      },
-      "Ops >> Linux >> Download file #http#https":
-      {
-        "Steps": [
-          {
-            "Prompt": {
-              "QuestionComposer": "`File url?`",
-              "VarNameComposer": "fileUrl"
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "Local file path?",
-              "VarNameComposer": "localFilePath"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`curl --output <localFilePath> <fileUrl>`"
-            }
-          }
-        ]
-      },
-      "git >> Config >> Set account": {
-        "Steps": [
-          {
-            "Prompt": {
-              "QuestionComposer": "`git server user name?`",
-              "VarNameComposer": "`userName`"
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`git server email?`",
-              "VarNameComposer": "`email`"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`git config --global user.name \\\"<userName>\\\"`",
-              "SkipPrompt": true
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`git config --global user.email \\\"<email>\\\"`"
-            }
-          }
-        ]
-      },
-      "git >> Config >> Show configuartion": {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`git config --list --show-origin`"
-            }
-          }
-        ]
-      },
-      "git >> Clone repo": {
-        "Steps": [
-          {
-            "Prompt": {
-              "QuestionComposer": "`Source repo?`",
-              "VarNameComposer": "`srcRepo`"
-            }
-          },
-          {
-            "Mcq": {
-              "QuestionComposer": "`Clone to?`",
-              "OptionsComposer": "[`0- Current directory`, `1- Other directory`]",
-              "VarNameComposer": "`currentOrDir`"
-            }
-          },
-          {
-            "RunOnlyIfComposer": "()=>'<currentOrDir>' == '0- Current directory'",
-            "Command": {
-              "CommandComposer": "`git clone \\\"<srcRepo>\\\"`"
-            }
-          },
-          {
-            "RunOnlyIfComposer": "()=>'<currentOrDir>' == '1- Other directory'",
-            "Prompt": {
-              "QuestionComposer": "`Target dir?`",
-              "VarNameComposer": "`targetDir`"
-            }
-          },
-          {
-            "RunOnlyIfComposer": "()=>'<currentOrDir>' == '1- Other directory'",
-            "Command": {
-              "CommandComposer": "`git clone \\\"<srcRepo>\\\" \\\"<targetDir>\\\"`"
-            }
-          }
-        ]
-      },
-      "git >> Track ...": {
-        "Steps": [
-          {
-            "Prompt": { 
-              "VarNameComposer": "`relativePaths`",
-              "QuestionComposer": "`File(s)/Dir(s) root relative path? (space separated)`",
-              "Regex": ".+"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`git add <relativePaths>`"
-            }
-          }
-        ]
-      },
-      "git >> Show log": {
-        "Steps": [
-          {
-            "Command": {
-              "SkipPrompt": true,
-              "CommandComposer": "`git log --graph --stat`"
-            }
-          }
-        ]
-      },
-      "Gotcha >> Templates >> Open my templates folder to edit" : {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`code %userprofile%\\\\decova-gotcha-data`"
-            }
-          },
-          {
-            "Instruction": {
-              "InstructionComposer": "`REMINDER: After editing use your external tool to commit and push the changes!`"
-            }
-          }
-        ]
-      },
-      "Ionic >> Get your machine ready": {
-        "Shortcut": "ionic",
-        "Steps": [
-          {
-            "Command": {
-              "WillDoHintComposer": "`Will install Ionic cli globally on your machine`",
-              "CommandComposer": "`npm install -g @ionic/cli`"
-            }
-          }
-        ]
-      },
-      "Ionic >> Create a new project": {
-        "Shortcut": "ionic-new",
-        "Steps": [
-          {
-            "Command": {
-              "WillDoHintComposer": "`Will walk you in the steps of creating a new ionic project`",
-              "CommandComposer": "`ionic start`"
-            }
-          }
-        ]
-      },
-      "Ops >> Disk >> Get bitlocker status of all drives #encription": {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`manage-bde -status`",
-              "WillDoHintComposer": "`Will display the bitlocker status of all disk drives`"
-            }
-          }
-        ]
-      },
-      "Ops >> SSL >> Create OpenSSL certificate": {
-        "Shortcut": "create-openssl-certificate",
-        "Steps": [
-          {
-            "Repeater": {
-              "DoRepeatQuestionComposer": "`Do you want to check if you have openssl installed on your machine?`",
-              "WillDoHintComposer": "`Will check if you have openssl tool installed`",
-              "IterationSteps": [
-                {
-                  "Command": {
-                    "CommandComposer": "`openssl version`",
-                    "WillDoHintComposer": "`Will check if you already have it on your machine.`"
-                  }
+            ]
+        },
+        "SCH_Walkthrough": {
+            "additionalProperties": false,
+            "properties": {
+                "IsCommentedOut": {
+                    "type": "boolean",
+                    "description": "Dictates if this Walkthrough shouldn't be displayed to user."
                 },
-                {
-                  "Mcq": {
-                    "OptionsComposer": "['1- Yes', '0- No']",
-                    "QuestionComposer": "`Do you have it installed?`",
-                    "VarNameComposer": "`haveIt`"
-                  }
+                "Steps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SCH_Step"
+                    }
                 },
-                {
-                  "Instruction": {
-                    "InstructionComposer": "`!!! Make sure you Keep the installation dir for using it in setting the environment variable.`"
-                  }
-                },
-                {
-                  "Instruction": {
-                    "InstructionComposer": "`Download it from https://slproweb.com/products/Win32OpenSSL.html`"
-                  }
-                },
-                {
-                  "Prompt": {
-                    "QuestionComposer": "`Installation Dir:`",
-                    "VarNameComposer": "`dir`"
-                  }
-                },
-                {
-                  "Command": {
-                    "CommandComposer": "`set OPENSSL_CONF=<dir>/bin/openssl.cfg`"
-                  }
-                },
-                {
-                  "Command": {
-                    "CommandComposer": "`set Path=%Path%;<dir>/bin`"
-                  }
+                "Shortcut": {
+                    "type": "string"
                 }
-                
-              ]
+            },
+            "required": [
+                "Steps"
+            ]
+        }
+    },
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "CreatedOn": {
+            "type": "string",
+            "description": "The datetime this version of the CommandSheet is created .",
+            "pattern": "^[0-9]{4,4}-[0-9]{2,2}-[0-9]{2,2} [0-9]{2,2}:[0-9]{2,2}:[0-9]{2,2}"
+        },
+        "Walkthroughs": {
+            "additionalProperties": {
+                "$ref": "#/definitions/SCH_Walkthrough"
             }
-          }
-        ]
-      },
-      "Ops >> SSL >> Create https dev certificate": {
-        "Shortcut": "create_dev_https_cert",
-        "Steps": [
-          {
-            "Instruction": {
-              "InstructionComposer": "`!!! I think this should be done with administrator priviledge`"
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`Certificate name (The same as the main .net assembly and case sensitive)`",
-              "VarNameComposer": "`certName`"
-            }
-          },
-          {
-            "Prompt": {
-              "QuestionComposer": "`Password`",
-              "VarNameComposer": "`password`"
-            }
-          },
-          {
-            "Command": {
-              "CommandComposer": "`dotnet dev-certs https -ep $env:\"USERPROFILE\\\\.aspnet\\\\https\\\\<certName>.pfx\" -p <password> --trust`"
-            }
-          },
-          {
-            "Command": {
-              "WillDoHintComposer": "`Will open the directory contains your .pfx file`",
-              "CommandComposer": "`start %USERPROFILE%/.aspnet/https/`"
-            }
-          }
-  
-        ]
-      },
-      "Ops >> Create https cert for a docker container":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`g create_dev_https_cert`",
-              "WillDoHintComposer": "`Will guide you through creating the dev cert at the host machine.`"
-            }
-          }
-          
-        ]
-      },
-      "Ops >> Network >> Open Hosts file location":
-      {
-        "Steps": [
-          {
-            "Command": {
-              "CommandComposer": "`start C:\\\\Windows\\\\System32\\\\drivers\\\\etc`"
-            }
-          }
-        ]
-      }
-    }
-   
-  }
-  
+        }
+    },
+    "required": [
+        "Walkthroughs"
+    ]
+}
