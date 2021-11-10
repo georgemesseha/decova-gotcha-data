@@ -184,6 +184,9 @@
                 },
                 "While": {
                     "$ref": "#/definitions/SCH_While"
+                },
+                "SetVar": {
+                    "$ref": "#/definitions/SCH_SetVar"   
                 }
             },
             "oneOf": [
