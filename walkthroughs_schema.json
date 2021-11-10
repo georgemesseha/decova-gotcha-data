@@ -146,7 +146,7 @@
                     "type": "string",
                     "description": "The expression when evaluated you get the var name"
                 },
-                "EvaluationExpressionComposer": {
+                "ExpressionComposer": {
                     "type": "string",
                     "description": "The js string contains the code when evaluated as an expression that when evaluated it return the required value to set to the variable."
                 }
