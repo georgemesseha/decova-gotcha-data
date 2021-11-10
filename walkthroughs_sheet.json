@@ -1,9 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/georgemesseha/decova-gotcha-data/master/walkthroughs_schema.json",
   "Walkthroughs": {
-    "Ops >> Find the process whose port":
-    {
-      
+    "Ops >> Find the process whose port": {
       "Steps": [
         {
           "Prompt": {
@@ -34,8 +32,7 @@
         }
       ]
     },
-    "Ops >> NodeJS >> build & patch++ & publish #increment#push":
-    {    
+    "Ops >> NodeJS >> build & patch++ & publish #increment#push": {
       "Shortcut": "++",
       "Steps": [
         {
@@ -58,8 +55,7 @@
         }
       ]
     },
-    "Ops >> vscode >> Writing Extension >> Pack your extension #vsce":
-    {
+    "Ops >> vscode >> Writing Extension >> Pack your extension #vsce": {
       "Steps": [
         {
           "Command": {
@@ -81,8 +77,7 @@
         }
       ]
     },
-    "Dev >> npm >> List direct dependencies":
-    {
+    "Dev >> npm >> List direct dependencies": {
       "Steps": [
         {
           "Command": {
@@ -92,8 +87,7 @@
         }
       ]
     },
-    "Dev >> npm >> List globally installed packages":
-    {
+    "Dev >> npm >> List globally installed packages": {
       "Steps": [
         {
           "Command": {
@@ -103,8 +97,7 @@
         }
       ]
     },
-    "Ops >> Docker >> Container >> List running containers #list#show":
-    {
+    "Ops >> Docker >> Container >> List running containers #list#show": {
       "Steps": [
         {
           "Command": {
@@ -114,8 +107,7 @@
         }
       ]
     },
-    "Ops >> Docker >> Image >> Export image to tar file":
-    {
+    "Ops >> Docker >> Image >> Export image to tar file": {
       "Steps": [
         {
           "Mcq": {
@@ -153,8 +145,7 @@
         }
       ]
     },
-    "Ops >> Docker >> Container >> Bash inside a running docker container #cmd#command#cli":
-    {
+    "Ops >> Docker >> Container >> Bash inside a running docker container #cmd#command#cli": {
       "Steps": [
         {
           "Mcq": {
@@ -165,7 +156,6 @@
         },
         {
           "RunOnlyIfComposer": "()=> '<displayRunningContainers>' == 'Yes'",
-
           "Command": {
             "WillDoHintComposer": "`Will display the running containers`",
             "CommandComposer": "`docker ps`"
@@ -185,8 +175,7 @@
         }
       ]
     },
-    "Ops >> Docker >> Image >> List images #display#show":
-    {
+    "Ops >> Docker >> Image >> List images #display#show": {
       "Steps": [
         {
           "Command": {
@@ -196,8 +185,7 @@
         }
       ]
     },
-    "Ops >> Docker >> Image >> Pull image":
-    {
+    "Ops >> Docker >> Image >> Pull image": {
       "Steps": [
         {
           "Mcq": {
@@ -235,8 +223,7 @@
         }
       ]
     },
-    "Ops >> Docker >> Container >> List all running and stopped containers":
-    {
+    "Ops >> Docker >> Container >> List all running and stopped containers": {
       "Steps": [
         {
           "Command": {
@@ -246,8 +233,7 @@
         }
       ]
     },
-    "Ops >> Docker >> Container >> Create new container":
-    {
+    "Ops >> Docker >> Container >> Create new container": {
       "Steps": [
         {
           "Command": {
@@ -376,11 +362,9 @@
             "CommandComposer": "`docker run <options> <imageName> `"
           }
         }
-        
       ]
     },
-    "Ops >> Docker >> Container >> Display port mappings":
-    {
+    "Ops >> Docker >> Container >> Display port mappings": {
       "Steps": [
         {
           "Command": {
@@ -404,8 +388,7 @@
         }
       ]
     },
-    "Ops >> Docker >> Container >> Copy a file/folder (Host --> Container)":
-    {
+    "Ops >> Docker >> Container >> Copy a file/folder (Host --> Container)": {
       "Steps": [
         {
           "Mcq": {
@@ -450,8 +433,7 @@
         }
       ]
     },
-    "Ops >> Docker >> Container >> Copy a file/folder (Container --> Host)":
-    {
+    "Ops >> Docker >> Container >> Copy a file/folder (Container --> Host)": {
       "Steps": [
         {
           "Command": {
@@ -488,8 +470,7 @@
         }
       ]
     },
-    "Dev >> npm >> Find unused and missing dependencies/packages":
-    {
+    "Dev >> npm >> Find unused and missing dependencies/packages": {
       "Steps": [
         {
           "Command": {
@@ -499,8 +480,7 @@
         }
       ]
     },
-    "Poyka >> Open old poyka browsing mechanism":
-    {
+    "Poyka >> Open old poyka browsing mechanism": {
       "Steps": [
         {
           "Command": {
@@ -510,8 +490,7 @@
         }
       ]
     },
-    "Dev >> My Projects >> Develop >> decova-Ops >> Gotcha >>":
-    {
+    "Dev >> My Projects >> Develop >> decova-Ops >> Gotcha >>": {
       "Steps": [
         {
           "Command": {
@@ -521,8 +500,7 @@
         }
       ]
     },
-    "Ops >> Node >> Workspace >> Increment patch and update dependent workspaces #patch++":
-    {
+    "Ops >> Node >> Workspace >> Increment patch and update dependent workspaces #patch++": {
       "Steps": [
         {
           "Command": {
@@ -532,8 +510,7 @@
         }
       ]
     },
-    "Ops >> Gotcha >> Local Tool >> Add a new LocalTool":
-    {
+    "Ops >> Gotcha >> Local Tool >> Add a new LocalTool": {
       "Steps": [
         {
           "Command": {
@@ -580,8 +557,7 @@
         }
       ]
     },
-    "Dev >> Snippets >> Create a new code snippet":
-    {
+    "Dev >> Snippets >> Create a new code snippet": {
       "Steps": [
         {
           "Instruction": {
@@ -612,8 +588,7 @@
         }
       ]
     },
-    "Dev >> NodeJS >> Unit Test >> package.json >> Generate script >> Test with mocha":
-    {
+    "Dev >> NodeJS >> Unit Test >> package.json >> Generate script >> Test with mocha": {
       "Steps": [
         {
           "Instruction": {
@@ -622,8 +597,7 @@
         }
       ]
     },
-    "Dev >> NodeJS >> Unit Test >> Setup mocha in your project":
-    {
+    "Dev >> NodeJS >> Unit Test >> Setup mocha in your project": {
       "Steps": [
         {
           "Command": {
@@ -675,8 +649,7 @@
         }
       ]
     },
-    "Ops >> Linux >> Centos >> yum >> List installed packages":
-    {
+    "Ops >> Linux >> Centos >> yum >> List installed packages": {
       "Steps": [
         {
           "Command": {
@@ -685,8 +658,7 @@
         }
       ]
     },
-    "Ops >> Linux >> ODBC >> List locations of your unixODBC installation and configuration files #installed":
-    {
+    "Ops >> Linux >> ODBC >> List locations of your unixODBC installation and configuration files #installed": {
       "Steps": [
         {
           "Command": {
@@ -695,8 +667,7 @@
         }
       ]
     },
-    "Ops >> Linux >> Download file #http#https":
-    {
+    "Ops >> Linux >> Download file #http#https": {
       "Steps": [
         {
           "Prompt": {
@@ -792,7 +763,7 @@
     "git >> Track ...": {
       "Steps": [
         {
-          "Prompt": { 
+          "Prompt": {
             "VarNameComposer": "`relativePaths`",
             "QuestionComposer": "`File(s)/Dir(s) root relative path? (space separated)`",
             "Regex": ".+"
@@ -815,7 +786,7 @@
         }
       ]
     },
-    "Gotcha >> Templates >> Open my templates folder to edit" : {
+    "Gotcha >> Templates >> Open my templates folder to edit": {
       "Steps": [
         {
           "Command": {
@@ -864,38 +835,31 @@
     "Ops >> SSL >> Create OpenSSL certificate": {
       "Shortcut": "create-openssl-certificate",
       "Steps": [
-        { 
-          "SetVar": {
-            "ExpressionComposer": "`checkHavingOpenSslTool`"
-            
+        {
+          "Command": {
+            "CommandComposer": "`openssl version`",
+            "WillDoHintComposer": "`Will check if you already have it on your machine.`"
           }
         },
         {
-          "Repeater": {
-            "DoRepeatQuestionComposer": "`Do you want to check if you have openssl installed on your machine?`",
-            "WillDoHintComposer": "`Will check if you have openssl tool installed`",
-            "IterationSteps": [
-              {
-                "Command": {
-                  "CommandComposer": "`openssl version`",
-                  "WillDoHintComposer": "`Will check if you already have it on your machine.`"
-                }
-              },
-              {
-                "Mcq": {
-                  "OptionsComposer": "['1- Yes', '0- No']",
-                  "QuestionComposer": "`Do you have it installed?`",
-                  "VarNameComposer": "`haveIt`"
-                }
-              },
-              {
-                "Instruction": {
-                  "InstructionComposer": "`!!! Make sure you Keep the installation dir for using it in setting the environment variable.`"
-                }
-              },
+          "Mcq": {
+            "QuestionComposer": "`Do you have it installed?`",
+            "OptionsComposer": "['1- Yes', '0- No']",
+            "VarNameComposer": "`haveIt`"
+          }
+        },
+        {
+          "While": {
+            "ExpressionComposer": "`<haveIt> !== '1- Yes'`",
+            "Steps": [
               {
                 "Instruction": {
                   "InstructionComposer": "`Download it from https://slproweb.com/products/Win32OpenSSL.html`"
+                }
+              },
+              {
+                "Instruction": {
+                  "InstructionComposer": "`Install it and keep a copy of the installation dir to use it in the next step`"
                 }
               },
               {
@@ -913,8 +877,20 @@
                 "Command": {
                   "CommandComposer": "`set Path=%Path%;<dir>/bin`"
                 }
+              },
+              {
+                "Command": {
+                  "CommandComposer": "`openssl version`",
+                  "WillDoHintComposer": "`Will check if you already have it on your machine.`"
+                }
+              },
+              {
+                "Mcq": {
+                  "OptionsComposer": "['1- Yes', '0- No']",
+                  "QuestionComposer": "`Do you have it installed?`",
+                  "VarNameComposer": "`haveIt`"
+                }
               }
-              
             ]
           }
         }
@@ -951,11 +927,9 @@
             "CommandComposer": "`start %USERPROFILE%/.aspnet/https/`"
           }
         }
-
       ]
     },
-    "Ops >> Create https cert for a docker container":
-    {
+    "Ops >> Create https cert for a docker container": {
       "Steps": [
         {
           "Command": {
@@ -963,11 +937,9 @@
             "WillDoHintComposer": "`Will guide you through creating the dev cert at the host machine.`"
           }
         }
-        
       ]
     },
-    "Ops >> Network >> Open Hosts file location":
-    {
+    "Ops >> Network >> Open Hosts file location": {
       "Steps": [
         {
           "Command": {
@@ -977,5 +949,4 @@
       ]
     }
   }
- 
 }
