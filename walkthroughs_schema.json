@@ -110,7 +110,7 @@
             "additionalProperties": false,
             "type": "object",
             "properties": {
-                "Expression": {
+                "ExpressionComposer": {
                     "type": "string",
                     "description": "The expression to check"
                 },
