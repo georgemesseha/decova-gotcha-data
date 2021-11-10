@@ -864,6 +864,12 @@
     "Ops >> SSL >> Create OpenSSL certificate": {
       "Shortcut": "create-openssl-certificate",
       "Steps": [
+        { 
+          "SetVar": {
+            "ExpressionComposer": "`checkHavingOpenSslTool`"
+            
+          }
+        },
         {
           "Repeater": {
             "DoRepeatQuestionComposer": "`Do you want to check if you have openssl installed on your machine?`",
