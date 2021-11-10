@@ -861,6 +861,59 @@
         }
       ]
     },
+    "Ops >> SSL >> Create OpenSSL certificate": {
+      "Shortcut": "create-openssl-certificate",
+      "Steps": [
+        {
+          "Repeater": {
+            "DoRepeatQuestionComposer": "`Do you want to check if you have openssl installed on your machine?`",
+            "WillDoHintComposer": "`Will check if you have openssl tool installed`",
+            "IterationSteps": [
+              {
+                "Command": {
+                  "CommandComposer": "`openssl version`",
+                  "WillDoHintComposer": "`Will check if you already have it on your machine.`"
+                }
+              },
+              {
+                "Mcq": {
+                  "OptionsComposer": "['1- Yes', '0- No']",
+                  "QuestionComposer": "`Do you have it installed?`",
+                  "VarNameComposer": "`haveIt`"
+                }
+              },
+              {
+                "Instruction": {
+                  "InstructionComposer": "`!!! Make sure you Keep the installation dir for using it in setting the environment variable.`"
+                }
+              },
+              {
+                "Instruction": {
+                  "InstructionComposer": "`Download it from https://slproweb.com/products/Win32OpenSSL.html`"
+                }
+              },
+              {
+                "Prompt": {
+                  "QuestionComposer": "`Installation Dir:`",
+                  "VarNameComposer": "`dir`"
+                }
+              },
+              {
+                "Command": {
+                  "CommandComposer": "`set OPENSSL_CONF=<dir>/bin/openssl.cfg`"
+                }
+              },
+              {
+                "Command": {
+                  "CommandComposer": "`set Path=%Path%;<dir>/bin`"
+                }
+              }
+              
+            ]
+          }
+        }
+      ]
+    },
     "Ops >> SSL >> Create https dev certificate": {
       "Shortcut": "create_dev_https_cert",
       "Steps": [
@@ -892,6 +945,7 @@
             "CommandComposer": "`start %USERPROFILE%/.aspnet/https/`"
           }
         }
+
       ]
     },
     "Ops >> Create https cert for a docker container":
