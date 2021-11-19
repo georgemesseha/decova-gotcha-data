@@ -967,8 +967,8 @@
           }
         },
         {
-          "Command": {
-            "CommandComposer": "`echo \\\"<UserSecretsId><uniqueAppSecretKey></UserSecretsId>\\\"`"
+          "Instruction": {
+            "InstructionComposer": "`<UserSecretsId><uniqueAppSecretKey></UserSecretsId>`"
           }
         },
         {
