@@ -947,6 +947,53 @@
           }
         }
       ]
+    },
+    "Dev >> Create .net User Secrets for current project" : {
+      "Steps": [
+        {
+          "Instruction": {
+            "InstructionComposer": "`Make sure first you're at the same level of your .csprj file`"
+          }
+        },
+        {
+          "Prompt": {
+            "VarNameComposer": "`uniqueAppSecretKey`",
+            "QuestionComposer": "`Unique key for app secrets?`"
+          }
+        },
+        {
+          "Instruction": {
+            "InstructionComposer": "`Add the following to the <PropertyGroup> in your .csproj file`"
+          }
+        },
+        {
+          "Command": {
+            "CommandComposer": "`echo \\\"<UserSecretsId><uniqueAppSecretKey></UserSecretsId>\\\"`"
+          }
+        },
+        {
+          "Prompt": {
+            "QuestionComposer": "`First Key?`",
+            "VarNameComposer": "`key`"
+          }
+        },
+        {
+          "Prompt": {
+            "QuestionComposer": "`First Value?`",
+            "VarNameComposer": "`value`"
+          }
+        },
+        {
+          "Command": {
+            "CommandComposer": "`dotnet user-secrets set \\\"<key>\\\" \\\"<value>\\\"`"
+          }
+        },
+        {
+          "Command": {
+            "CommandComposer": "dotnet user-secrets list"
+          }
+        }
+      ]
     }
   }
 }
