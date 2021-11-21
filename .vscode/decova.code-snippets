@@ -172,5 +172,34 @@
             ""
         ],
         "description": "Generates a UIComponent code along with its circuit"
+    },
+    "george docker-compose": {
+        "prefix": "docker-compose-ssl",
+        "body": [
+            "# docker run --rm -it \r",
+            "# -p 5500:80 -p 5555:443 \r",
+            "# -e ASPNETCORE_URLS=\"https://+;http://+\" \r",
+            "# -e ASPNETCORE_HTTPS_PORT=4001\r",
+            "# -e ASPNETCORE_Kestrel__Certificates__Default__Password=\"trustGod();1\"\r",
+            "# -e ASPNETCORE_Kestrel__Certificates__Default__Path=/https/WebApplication1.pfx \r",
+            "# -v D:\\_certs:/https/ test-ssl-8\r",
+            "\r",
+            "version: '3'\r",
+            "services:\r",
+            "  ssl13: \r",
+            "    build: \"G:\\\\Duty\\\\ArabFinance\\\\__NEW PRODUCTS\\\\EGID_Feeds\\\\POCs\\\\DeployToAzure\\\\WebApplication1\\\\WebApplication1\\\\bin\\\\Release\\\\net5.0\\\\publish\"\r",
+            "    image: ssl13\r",
+            "    ports:\r",
+            "      - 5555:443\r",
+            "      - 5500:80\r",
+            "    environment:\r",
+            "      - ASPNETCORE_URLS=\"https://+;http://+\"\r",
+            "      - ASPNETCORE_HTTPS_PORT=\"5555\"\r",
+            "      - ASPNETCORE_Kestrel__Certificates__Default__Password=trustGod();1\r",
+            "      - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/https/WebApplication1.pfx\r",
+            "      # - ASPNETCORE_ENVIRONMENT=Development\r",
+            ""
+        ],
+        "description": "A template for running a docker container with https installed"
     }
 }
